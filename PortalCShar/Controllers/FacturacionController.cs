@@ -22,6 +22,10 @@ namespace PortalCShar.Controllers
 
         public void hola() { }
 
+        public void hola2() { }
+
+        public void hola3() { }
+
         public ActionResult Index()
         {
             return View();
