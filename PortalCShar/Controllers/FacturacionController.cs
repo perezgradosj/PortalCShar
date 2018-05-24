@@ -20,6 +20,8 @@ namespace PortalCShar.Controllers
         ServiceFacturacion.ServicioFacturacionClient ServicioFacturacion = new ServiceFacturacion.ServicioFacturacionClient();
         ServiceConsult.WServiceGetDocumentSoapClient ServiceConsult = new ServiceConsult.WServiceGetDocumentSoapClient();
 
+        public void hola() { }
+
         public ActionResult Index()
         {
             return View();
