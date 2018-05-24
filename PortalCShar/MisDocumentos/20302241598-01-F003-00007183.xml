@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Invoice xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:qdt="urn:oasis:names:specification:ubl:schema:xsd:QualifiedDatatypes-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:udt="urn:un:unece:uncefact:data:specification:UnqualifiedDataTypesSchemaModule:2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2" xmlns:sac="urn:sunat:names:specification:ubl:peru:schema:xsd:SunatAggregateComponents-1" xmlns:ccts="urn:un:unece:uncefact:documentation:2" xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2">
+	<ext:UBLExtensions>
+		<ext:UBLExtension>
+			<ext:ExtensionContent><AdditionalInformationSLIN><Document><ID>20302241598-01-F003-00007183</ID></Document><Extra><ExLinea>1</ExLinea><ExDato><![CDATA[NORMAL]]></ExDato><ExTipo></ExTipo></Extra><Extra><ExLinea>2</ExLinea><ExDato><![CDATA[-]]></ExDato><ExTipo></ExTipo></Extra><Extra><ExLinea>3</ExLinea><ExDato><![CDATA[GR-00037-0092723]]></ExDato><ExTipo></ExTipo></Extra><Extra><ExLinea>4</ExLinea><ExDato><![CDATA[001 - 0010911]]></ExDato><ExTipo></ExTipo></Extra><Extra><ExLinea>5</ExLinea><ExDato><![CDATA[1000241696]]></ExDato><ExTipo></ExTipo></Extra><Extra><ExLinea>6</ExLinea><ExDato><![CDATA[3.26100]]></ExDato><ExTipo></ExTipo></Extra><Extra><ExLinea>7</ExLinea><ExDato><![CDATA[Factura 30 días]]></ExDato><ExTipo></ExTipo></Extra><Extra><ExLinea>8</ExLinea><ExDato><![CDATA[2018-06-13]]></ExDato><ExTipo></ExTipo></Extra><Extra><ExLinea>9</ExLinea><ExDato><![CDATA[MIGUEL SKECHE LLANOS]]></ExDato><ExTipo></ExTipo></Extra><Extra><ExLinea>10</ExLinea><ExDato><![CDATA[-]]></ExDato><ExTipo></ExTipo></Extra><Extra><ExLinea>11</ExLinea><ExDato><![CDATA[-]]></ExDato><ExTipo></ExTipo></Extra><Extra><ExLinea>12</ExLinea><ExDato><![CDATA[-]]></ExDato><ExTipo></ExTipo></Extra><Extra><ExLinea>13</ExLinea><ExDato><![CDATA[-]]></ExDato><ExTipo></ExTipo></Extra><Extra><ExLinea>14</ExLinea><ExDato><![CDATA[-]]></ExDato><ExTipo></ExTipo></Extra><Extra><ExLinea>15</ExLinea><ExDato><![CDATA[-]]></ExDato><ExTipo></ExTipo></Extra><Extra><ExLinea>16</ExLinea><ExDato><![CDATA[-]]></ExDato><ExTipo></ExTipo></Extra><Extra><ExLinea>17</ExLinea><ExDato><![CDATA[-]]></ExDato><ExTipo></ExTipo></Extra><Extra><ExLinea>18</ExLinea><ExDato><![CDATA[-]]></ExDato><ExTipo></ExTipo></Extra><Extra><ExLinea>19</ExLinea><ExDato><![CDATA[-]]></ExDato><ExTipo></ExTipo></Extra><Extra><ExLinea>20</ExLinea><ExDato><![CDATA[-]]></ExDato><ExTipo></ExTipo></Extra><Extra><ExLinea>21</ExLinea><ExDato><![CDATA[-]]></ExDato><ExTipo></ExTipo></Extra><Extra><ExLinea>22</ExLinea><ExDato><![CDATA[-]]></ExDato><ExTipo></ExTipo></Extra><Extra><ExLinea>23</ExLinea><ExDato><![CDATA[-]]></ExDato><ExTipo></ExTipo></Extra><Extra><ExLinea>24</ExLinea><ExDato><![CDATA[-]]></ExDato><ExTipo></ExTipo></Extra><Extra><ExLinea>25</ExLinea><ExDato><![CDATA[-]]></ExDato><ExTipo></ExTipo></Extra><Extra><ExLinea>26</ExLinea><ExDato><![CDATA[DOSCIENTOS SIETE y 09/100 DOLARES AMERICANOS]]></ExDato><ExTipo></ExTipo></Extra><Extra><ExLinea>27</ExLinea><ExDato><![CDATA[A partir del 01 de Julio del 2002 somos agentes de retención según RS037/2002.]]></ExDato><ExTipo></ExTipo></Extra><Extra><ExLinea>28</ExLinea><ExDato><![CDATA[-]]></ExDato><ExTipo></ExTipo></Extra><Extra><ExLinea>29</ExLinea><ExDato><![CDATA[-]]></ExDato><ExTipo></ExTipo></Extra><Extra><ExLinea>30</ExLinea><ExDato><![CDATA[-]]></ExDato><ExTipo></ExTipo></Extra><Extra><ExLinea>31</ExLinea><ExDato><![CDATA[-]]></ExDato><ExTipo></ExTipo></Extra><Extra><ExLinea>32</ExLinea><ExDato><![CDATA[-]]></ExDato><ExTipo></ExTipo></Extra><Extra><ExLinea>33</ExLinea><ExDato><![CDATA[-]]></ExDato><ExTipo></ExTipo></Extra><Extra><ExLinea>34</ExLinea><ExDato><![CDATA[-]]></ExDato><ExTipo></ExTipo></Extra><Extra><ExLinea>35</ExLinea><ExDato><![CDATA[-]]></ExDato><ExTipo></ExTipo></Extra><Extra><ExLinea>36</ExLinea><ExDato><![CDATA[-]]></ExDato><ExTipo></ExTipo></Extra><Extra><ExLinea>37</ExLinea><ExDato><![CDATA[-]]></ExDato><ExTipo></ExTipo></Extra><Extra><ExLinea>38</ExLinea><ExDato><![CDATA[-]]></ExDato><ExTipo></ExTipo></Extra><Extra><ExLinea>39</ExLinea><ExDato><![CDATA[-]]></ExDato><ExTipo></ExTipo></Extra><Extra><ExLinea>40</ExLinea><ExDato><![CDATA[-]]></ExDato><ExTipo></ExTipo></Extra><Extra><ExLinea>41</ExLinea><ExDato><![CDATA[-]]></ExDato><ExTipo></ExTipo></Extra><Extra><ExLinea>42</ExLinea><ExDato><![CDATA[-]]></ExDato><ExTipo></ExTipo></Extra><Extra><ExLinea>43</ExLinea><ExDato><![CDATA[-]]></ExDato><ExTipo></ExTipo></Extra><Extra><ExLinea>44</ExLinea><ExDato><![CDATA[-]]></ExDato><ExTipo></ExTipo></Extra><Extra><ExLinea>45</ExLinea><ExDato><![CDATA[-]]></ExDato><ExTipo></ExTipo></Extra><Extra><ExLinea>46</ExLinea><ExDato><![CDATA[BANCO DE CREDITO DEL PERU*USD*193-0187634-1-01*00219300018763410115]]></ExDato><ExTipo></ExTipo></Extra><Extra><ExLinea>47</ExLinea><ExDato><![CDATA[BANCO CONTINENTAL*USD*0011-0586-0100020782-57*01158600010002078257]]></ExDato><ExTipo></ExTipo></Extra><Extra><ExLinea>48</ExLinea><ExDato><![CDATA[-]]></ExDato><ExTipo></ExTipo></Extra><Extra><ExLinea>49</ExLinea><ExDato><![CDATA[DATOS BANCARIOS (INDICAR SU NRO.DE RUC AL MOMENTO DE REALIZAR EL PAGO)]]></ExDato><ExTipo></ExTipo></Extra><Extra><ExLinea>50</ExLinea><ExDato><![CDATA[]]></ExDato><ExTipo></ExTipo></Extra></AdditionalInformationSLIN></ext:ExtensionContent>
+		</ext:UBLExtension>
+		<ext:UBLExtension>
+			<ext:ExtensionContent><sac:AdditionalInformation><sac:AdditionalMonetaryTotal><cbc:ID>1001</cbc:ID><cbc:PayableAmount currencyID="USD">175.50</cbc:PayableAmount></sac:AdditionalMonetaryTotal><sac:AdditionalMonetaryTotal><cbc:ID>1002</cbc:ID><cbc:PayableAmount currencyID="USD">0.00</cbc:PayableAmount></sac:AdditionalMonetaryTotal><sac:AdditionalMonetaryTotal><cbc:ID>1003</cbc:ID><cbc:PayableAmount currencyID="USD">0.00</cbc:PayableAmount></sac:AdditionalMonetaryTotal><sac:AdditionalProperty><cbc:ID>1000</cbc:ID><cbc:Value>DOSCIENTOS SIETE y 09/100 DOLARES AMERICANOS</cbc:Value></sac:AdditionalProperty><sac:SUNATTransaction><cbc:ID>01</cbc:ID></sac:SUNATTransaction></sac:AdditionalInformation></ext:ExtensionContent>
+		</ext:UBLExtension>
+		<ext:UBLExtension>
+			<ext:ExtensionContent><ds:Signature Id="SignatureSP"><SignedInfo xmlns="http://www.w3.org/2000/09/xmldsig#"><CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>Ifw9ax4Q168DP7uK1Yqz5z+3Dkg=</DigestValue></Reference></SignedInfo><SignatureValue xmlns="http://www.w3.org/2000/09/xmldsig#">Q8QhIDI/Ui9cJjc1OCZ7/0ni2be0uzAfCWE5PHIDsUdiDDaE4BNp6dnv+AQ2Z1RAePBnL8uf7kVkvY3lYS4Jv1gcFE15QkTlcAUgeioy/a4NpRmKr7aM+kvqzhZN/XCBqhqLDKkTwL0nIGz5OYMdresT6Iax17QzpVpaYvalToMA0bktBMwciOakyCbFeDOTI47M5r8qC8GxU7RjRgacMBaJGmHQcRgnbLKTXqADlexjj8sIcNejxNhwuCAqYhghQQxbRkPJ7/vpVioBhWRG5BMOKWbyFOTpksxF2243Cj9+4TN8PZjH2BOeHpY3YJnqaSnOFCAI4gj8lkDvvWxEEg==</SignatureValue><KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#"><X509Data><X509SubjectName>C=PE, CN=TAKAAKI KITABAYASHI KITABAYASHI, G=TAKAAKI, SN=KITABAYASHI KITABAYASHI, T=APODERADO, OU=20302241598, OU=VICEPRESIDENCIA EJECUTIVA CORPORATIVA, O=KOMATSU-MITSUI MAQUINARIAS PERU S.A., OID.1.3.6.1.4.1.17326.30.4=CEDULA DE EXTRANJERIA, OID.1.3.6.1.4.1.17326.30.3=20302241598, OID.1.3.6.1.4.1.17326.30.2=RUC, SERIALNUMBER=001176382, S=CALLAO-CALLAO, L=CALLAO, E=kely.hanco@kmmp.com.pe</X509SubjectName><X509Certificate>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</X509Certificate></X509Data></KeyInfo></ds:Signature></ext:ExtensionContent>
+		</ext:UBLExtension>
+	</ext:UBLExtensions>
+	<cbc:UBLVersionID>2.0</cbc:UBLVersionID>
+	<cbc:CustomizationID>1.0</cbc:CustomizationID>
+	<cbc:ID>F003-00007183</cbc:ID>
+	<cbc:IssueDate>2018-05-14</cbc:IssueDate>
+	<cbc:InvoiceTypeCode>01</cbc:InvoiceTypeCode>
+	<cbc:DocumentCurrencyCode>USD</cbc:DocumentCurrencyCode>
+	<cac:DespatchDocumentReference>
+		<cbc:ID>0037-0092723</cbc:ID>
+		<cbc:DocumentTypeCode>09</cbc:DocumentTypeCode>
+	</cac:DespatchDocumentReference>
+	<cac:Signature>
+		<cbc:ID>IDSign20302241598</cbc:ID>
+		<cac:SignatoryParty>
+			<cac:PartyIdentification>
+				<cbc:ID>20302241598</cbc:ID>
+			</cac:PartyIdentification>
+			<cac:PartyName>
+				<cbc:Name><![CDATA[KOMATSU-MITSUI MAQUINARIAS PERU SA]]></cbc:Name>
+			</cac:PartyName>
+		</cac:SignatoryParty>
+		<cac:DigitalSignatureAttachment>
+			<cac:ExternalReference>
+				<cbc:URI>#signature20302241598</cbc:URI>
+			</cac:ExternalReference>
+		</cac:DigitalSignatureAttachment>
+	</cac:Signature>
+	<cac:AccountingSupplierParty>
+		<cbc:CustomerAssignedAccountID>20302241598</cbc:CustomerAssignedAccountID>
+		<cbc:AdditionalAccountID>6</cbc:AdditionalAccountID>
+		<cac:Party>
+			<cac:PartyName>
+				<cbc:Name><![CDATA[KOMATSU-MITSUI MAQUINARIAS PERU SAC]]></cbc:Name>
+			</cac:PartyName>
+			<cac:PostalAddress>
+				<cbc:ID>070101</cbc:ID>
+				<cbc:StreetName><![CDATA[Av. Argentina CALLAO , CALLAO]]></cbc:StreetName>
+				<cbc:CitySubdivisionName><![CDATA[]]></cbc:CitySubdivisionName>
+				<cbc:CityName><![CDATA[]]></cbc:CityName>
+				<cbc:CountrySubentity><![CDATA[]]></cbc:CountrySubentity>
+				<cbc:District><![CDATA[]]></cbc:District>
+				<cac:Country>
+					<cbc:IdentificationCode></cbc:IdentificationCode>
+				</cac:Country>
+			</cac:PostalAddress>
+			<cac:PartyLegalEntity>
+				<cbc:RegistrationName><![CDATA[KOMATSU-MITSUI MAQUINARIAS PERU SA]]></cbc:RegistrationName>
+			</cac:PartyLegalEntity>
+		</cac:Party>
+	</cac:AccountingSupplierParty>
+	<cac:AccountingCustomerParty>
+		<cbc:CustomerAssignedAccountID>20517668657</cbc:CustomerAssignedAccountID>
+		<cbc:AdditionalAccountID>6</cbc:AdditionalAccountID>
+		<cac:Party>
+			<cac:PartyName>
+				<cbc:Name><![CDATA[RD RENTAL S.A.CC]]></cbc:Name>
+			</cac:PartyName>
+			<cac:PostalAddress>
+				<cbc:ID></cbc:ID>
+				<cbc:StreetName><![CDATA[CAL 2 MZ C LT 06 URB INDUSTRIAL LA MERCED ATE LIMA]]></cbc:StreetName>
+				<cbc:CitySubdivisionName><![CDATA[]]></cbc:CitySubdivisionName>
+				<cbc:CityName><![CDATA[]]></cbc:CityName>
+				<cbc:CountrySubentity><![CDATA[]]></cbc:CountrySubentity>
+				<cbc:District><![CDATA[]]></cbc:District>
+				<cac:Country>
+					<cbc:IdentificationCode></cbc:IdentificationCode>
+				</cac:Country>
+			</cac:PostalAddress>
+			<cac:PartyLegalEntity>
+				<cbc:RegistrationName><![CDATA[RD RENTAL S.A.C]]></cbc:RegistrationName>
+			</cac:PartyLegalEntity>
+		</cac:Party>
+	</cac:AccountingCustomerParty>
+	<cac:TaxTotal>
+		<cbc:TaxAmount currencyID="USD">31.59</cbc:TaxAmount>
+		<cac:TaxSubtotal>
+			<cbc:TaxAmount currencyID="USD">31.59</cbc:TaxAmount>
+			<cac:TaxCategory>
+				<cac:TaxScheme>
+					<cbc:ID>1000</cbc:ID>
+					<cbc:Name>IGV</cbc:Name>
+					<cbc:TaxTypeCode>VAT</cbc:TaxTypeCode>
+				</cac:TaxScheme>
+			</cac:TaxCategory>
+		</cac:TaxSubtotal>
+	</cac:TaxTotal>
+	<cac:LegalMonetaryTotal>
+		<cbc:PayableAmount currencyID="USD">207.09</cbc:PayableAmount>
+	</cac:LegalMonetaryTotal>
+	<cac:InvoiceLine>
+		<cbc:ID>1</cbc:ID>
+		<cbc:InvoicedQuantity unitCode="NIU">3.00</cbc:InvoicedQuantity>
+		<cbc:LineExtensionAmount currencyID="USD">175.50</cbc:LineExtensionAmount>
+		<cac:PricingReference>
+			<cac:AlternativeConditionPrice>
+				<cbc:PriceAmount currencyID="USD">69.03</cbc:PriceAmount>
+				<cbc:PriceTypeCode>01</cbc:PriceTypeCode>
+			</cac:AlternativeConditionPrice>
+		</cac:PricingReference>
+		<cac:TaxTotal>
+			<cbc:TaxAmount currencyID="USD">31.59</cbc:TaxAmount>
+			<cac:TaxSubtotal>
+				<cbc:TaxableAmount currencyID="USD">0.00</cbc:TaxableAmount>
+				<cbc:TaxAmount currencyID="USD">31.59</cbc:TaxAmount>
+				<cbc:Percent>18.00</cbc:Percent>
+				<cac:TaxCategory>
+					<cbc:TaxExemptionReasonCode>10</cbc:TaxExemptionReasonCode>
+					<cac:TaxScheme>
+						<cbc:ID>1000</cbc:ID>
+						<cbc:Name>IGV</cbc:Name>
+						<cbc:TaxTypeCode>VAT</cbc:TaxTypeCode>
+					</cac:TaxScheme>
+				</cac:TaxCategory>
+			</cac:TaxSubtotal>
+		</cac:TaxTotal>
+		<cac:Item>
+			<cbc:Description><![CDATA[Filtro /1]]></cbc:Description>
+			<cac:SellersItemIdentification>
+				<cbc:ID><![CDATA[23B-07-74170]]></cbc:ID>
+			</cac:SellersItemIdentification>
+		</cac:Item>
+		<cac:Price>
+			<cbc:PriceAmount currencyID="USD">58.50</cbc:PriceAmount>
+		</cac:Price>
+	</cac:InvoiceLine>
+</Invoice>

@@ -1,0 +1,105 @@
+﻿@using PortalCShar.Clases
+@{
+    ViewBag.Title = "ConsultaDocumento";
+    var usuario = Session["usuario"] as Usuario;
+}
+
+@if (usuario == null)
+{
+    Response.Redirect("/Usuario/Login");
+}
+
+<div class="container">
+    <nav>
+        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+            <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Consultar documentos</a>
+        </div>
+    </nav>
+    <div class="tab-content" id="nav-tabContent">
+        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab"><br />
+            <form id="form-consulta-documento" novalidate>
+                <div class="form-row">
+                    <div class="col-md-2">
+                        <label>Desde</label>
+                        <input type="date" class="form-control form-control-sm" name="fechainicio" required>
+                    </div>
+                    <div class="col-md-2">
+                        <label>Hasta</label>
+                        <input type="date" class="form-control form-control-sm" name="fechafin" required>
+                    </div>
+                </div><br />
+                <div class="form-row">
+                    <div class="form-group col-md-2">
+                        <select class="form-control form-control-sm" name="tipodocumento">
+                            <option selected value="0">Todos los documentos</option>
+                            <option value="01">Facturas</option>
+                            <option value="03">Boletas</option>
+                            <option value="07">Notas de crédito</option>
+                            <option value="08">Notas de débito</option>
+                            <option value="20">Comprobante de retencion electronica</option>
+                            <option value="40">Comprobante de percepcion electronica</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <button class="btn btn-primary btn-block btn-sm">Consultar</button>
+                    </div>                    
+                </div>
+                @*<div class="form-row">
+                    <div class="form-group col-md-4">
+                        <div class="alert alert-info alert-sm" role="alert" id="id-alerta-info1" style="display: none; text-align: center;"></div>
+                    </div>
+                </div>*@
+              </form>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover table-sm table-striped" id="tabla">
+            <thead class="">
+                <tr align="center">
+                    <th><span class="oi oi-check"></span></th>
+                    <th>XML</th>
+                    <th>PDF</th>
+                    <th>Documento</th>
+                    <th>Tipo Documento</th>
+                    <th>Fecha Emision</th>
+                    <th>Monto total</th>
+                </tr>
+            </thead>
+            <tbody id="lista-documentos" align="center" style="background:white">
+               
+            </tbody>
+        </table>
+        <div class="form-row">
+            <div class="col-md-6">
+                <a id="total-registros"></a>
+            </div>
+            <div class="col-md-6">
+                <nav aria-label="Page navigation example" id="pag">
+                    <ul class="pagination pagination-sm pager " id="myPager"></ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <br />
+    <form id="form-correo">
+        <h6>Enviar documentos por correo electrónico</h6>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <input type="text" class="form-control form-control-sm" aria-describedby="emailHelp" name="correo" id="txt-correo" placeholder="Ingrese correo" required />
+                <small id="emailHelp" class="form-text text-muted">Use punto y coma para añadir mas correos al envio. Ejemplo: correo1@gmail.com;correo2@gmail.com</small>
+            </div>
+            <div class="form-group col-md-2">
+                <button class="btn btn-primary btn-sm btn-block" id="btn-enviar">Enviar</button>
+            </div> 
+            <div class="form-group col-md-4">
+                <input class="form-control-plaintext form-control-sm" readonly  type="text" value="" id="mensaje" style="display:none">
+            </div>
+        </div>           
+    </form> 
+</div>
+
+<script src="~/Scripts/jquery-3.0.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="~/Scripts/js/facturacion.js"></script>

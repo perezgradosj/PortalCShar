@@ -1,0 +1,118 @@
+﻿@using PortalCShar.Clases
+@{
+    var usuario = Session["usuario"] as Usuario;
+    //var userresult = "";
+
+
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/estilos/principal.css" rel="stylesheet" />
+    <link href="~/Content/iconos/font/css/open-iconic-bootstrap.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Tajawal" rel="stylesheet">
+    <title>@ViewBag.Title - Principal</title>
+    
+</head>
+<body>    
+    <header>
+        <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
+            <h5 class="my-0 mr-md-auto font-weight-normal"><img src="~/Imagenes/20302241598.png" class="img-fluid" alt="Responsive image"/></h5>            
+            <nav class="my-2 my-md-0 mr-md-3">
+              <a class="btn btn-outline-primary home" href="~/Facturacion/Index"><span class="oi oi-home"></span></a>  
+            </nav>
+
+            @if (usuario != null)
+            {
+                //userresult = " Bienvenido : " + usuario.razonSocial;
+                <style>.home{display:none;}</style>
+                <a class="btn btn-outline-primary dropdown-toggle" href="~/Usuario/Login" data-toggle="dropdown"><span class="oi oi-person"></span> Bienvenido: @usuario.razonSocial</a>
+                <div class="dropdown-menu" aria-labelledby="dropdown09">
+                    <a class="dropdown-item" data-toggle="modal" id="modal-cambiodatos" data-target="#modal-cambioclave" style="cursor: pointer">Modificar clave/correo</a>
+                    <a class="dropdown-item" href="/Usuario/CerrarSesion">Cerrar Sesion</a>
+                </div>
+            }
+            else
+            {
+                //userresult = " Iniciar Sesión";
+                <a class="btn btn-outline-primary" href="~/Usuario/Login"><span class="oi oi-person"></span> Iniciar Sesión</a>
+
+            }
+
+            
+        </div>
+    </header>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <center><p>&copy;SLIN-ADE Administrador de Documentos Electrónicos Autorizado para: KOMATSU-MITSUI MAQUINARIAS PERU S.A</p></center>
+            <center><p>&copy;© Corporación Slin SAC 2018</p></center>
+        </footer>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="modal-cambioclave" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modificar mi clave o mi correo electrónico</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="form-modifica-datos" class="needs-validation" novalidate>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label>Correo electrónico actual:</label>
+                            </div>
+                            <div class="form-group col-md-6">
+                                @if (usuario != null)
+                                {
+                                    <input type="email" readonly class="form-control-plaintext form-control-sm" name="micorreoactual" id="txt-micorreoactual" value="@usuario.correo"/>
+                                }
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label>Nuevo electrónico:</label>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="email" class="form-control form-control-sm" name="correonuevo" id="txt-correonuevo" required/>
+                                <div class="invalid-feedback">
+                                    Ingrese correo válido.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label>Nueva contraseña:</label>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="password" class="form-control form-control-sm" name="clavenueva" id="txt-clavenueva" />
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-12">
+                                <div class="alert alert-primary" role="alert" id="alert-modificadatos" align="center" style="display:none">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary btn-sm" id="btn-guardar-cambios" >Guardar cambios</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    
+</body>
+</html>

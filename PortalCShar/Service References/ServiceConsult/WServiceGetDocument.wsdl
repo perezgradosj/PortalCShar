@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.slin.com.pe/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.slin.com.pe/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.slin.com.pe/">
+      <s:element name="GetDocumentoPDF">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NUM_CPE" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDocumentoPDFResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDocumentoPDFResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDocumentoXML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NUM_CPE" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDocumentoXMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDocumentoXMLResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStatusDocument">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NUM_CE" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStatusDocumentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetStatusDocumentResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStatusDocuments">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NUM_CE" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStatusDocumentsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetStatusDocumentsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CancelDocument">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="param" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CancelDocumentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CancelDocumentResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetDocumentoPDFSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDocumentoPDF" />
+  </wsdl:message>
+  <wsdl:message name="GetDocumentoPDFSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDocumentoPDFResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDocumentoXMLSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDocumentoXML" />
+  </wsdl:message>
+  <wsdl:message name="GetDocumentoXMLSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDocumentoXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetStatusDocumentSoapIn">
+    <wsdl:part name="parameters" element="tns:GetStatusDocument" />
+  </wsdl:message>
+  <wsdl:message name="GetStatusDocumentSoapOut">
+    <wsdl:part name="parameters" element="tns:GetStatusDocumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetStatusDocumentsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetStatusDocuments" />
+  </wsdl:message>
+  <wsdl:message name="GetStatusDocumentsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetStatusDocumentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="CancelDocumentSoapIn">
+    <wsdl:part name="parameters" element="tns:CancelDocument" />
+  </wsdl:message>
+  <wsdl:message name="CancelDocumentSoapOut">
+    <wsdl:part name="parameters" element="tns:CancelDocumentResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WServiceGetDocumentSoap">
+    <wsdl:operation name="GetDocumentoPDF">
+      <wsdl:input message="tns:GetDocumentoPDFSoapIn" />
+      <wsdl:output message="tns:GetDocumentoPDFSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentoXML">
+      <wsdl:input message="tns:GetDocumentoXMLSoapIn" />
+      <wsdl:output message="tns:GetDocumentoXMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStatusDocument">
+      <wsdl:input message="tns:GetStatusDocumentSoapIn" />
+      <wsdl:output message="tns:GetStatusDocumentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStatusDocuments">
+      <wsdl:input message="tns:GetStatusDocumentsSoapIn" />
+      <wsdl:output message="tns:GetStatusDocumentsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelDocument">
+      <wsdl:input message="tns:CancelDocumentSoapIn" />
+      <wsdl:output message="tns:CancelDocumentSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WServiceGetDocumentSoap" type="tns:WServiceGetDocumentSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetDocumentoPDF">
+      <soap:operation soapAction="http://www.slin.com.pe/GetDocumentoPDF" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentoXML">
+      <soap:operation soapAction="http://www.slin.com.pe/GetDocumentoXML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatusDocument">
+      <soap:operation soapAction="http://www.slin.com.pe/GetStatusDocument" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatusDocuments">
+      <soap:operation soapAction="http://www.slin.com.pe/GetStatusDocuments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelDocument">
+      <soap:operation soapAction="http://www.slin.com.pe/CancelDocument" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WServiceGetDocumentSoap12" type="tns:WServiceGetDocumentSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetDocumentoPDF">
+      <soap12:operation soapAction="http://www.slin.com.pe/GetDocumentoPDF" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentoXML">
+      <soap12:operation soapAction="http://www.slin.com.pe/GetDocumentoXML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatusDocument">
+      <soap12:operation soapAction="http://www.slin.com.pe/GetStatusDocument" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatusDocuments">
+      <soap12:operation soapAction="http://www.slin.com.pe/GetStatusDocuments" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelDocument">
+      <soap12:operation soapAction="http://www.slin.com.pe/CancelDocument" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WServiceGetDocument">
+    <wsdl:port name="WServiceGetDocumentSoap" binding="tns:WServiceGetDocumentSoap">
+      <soap:address location="http://localhost:8192/WServiceGetDocument.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WServiceGetDocumentSoap12" binding="tns:WServiceGetDocumentSoap12">
+      <soap12:address location="http://localhost:8192/WServiceGetDocument.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,81 @@
+﻿@using PortalCShar.Clases
+@{
+    ViewBag.Title = "Login";
+    var usuario = Session["usuario"] as Usuario;
+
+}
+
+@if (usuario != null)
+{
+    Response.Redirect("/Facturacion/ConsultaDocumento");
+}
+
+
+<section>
+    <div class="form-signin">
+        <nav>
+            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-login" role="tab" aria-controls="nav-home" aria-selected="true">Login</a>
+                <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-registro" role="tab" aria-controls="nav-profile" aria-selected="false">Registro</a>
+            </div>
+        </nav>
+        <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade show active" id="nav-login" role="tabpanel" aria-labelledby="nav-home-tab">
+                <form id="form-login" novalidate>
+                    <br /><center><h3>Iniciar Sesión</h3></center><hr>
+                    <div class="form-group">
+                        <input type="text" name="usuario" id="id-usuario" class="form-control" placeholder="Usuario" autofocus required />
+                    </div>
+
+                    <div class="form-group">
+                        <input type="password" name="clave" id="id-clave" class="form-control" placeholder="Contraseña" required />
+                    </div>
+
+                    <div class="form-row">
+                        <div class=" form-group col-sm-12">
+                            <button type="submit" class="btn btn-primary btn-block" id="btn-ingresar">Ingresar</button>
+                        </div>
+                    </div>
+
+                    <div class="alert alert-success" role="alert" id="id-exito" style="display: none; text-align: center;"></div>
+                    <div class="alert alert-danger" role="alert" id="id-error" style="display: none; text-align: center;"></div>
+                </form>
+            </div>
+            <div class="tab-pane fade" id="nav-registro" role="tabpanel" aria-labelledby="nav-profile-tab">
+                <form id="form-registro" novalidate>
+                    <br /><center><h3>Registrar nuevo usuario</h3></center><hr>
+                    <div class="form-group">
+                        <input type="text" name="nombre" id="id-nombres" class="form-control" placeholder="Nombres" autofocus required />
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" name="ruc" id="id-dni-ruc" maxlength="11" minlength="8" class="form-control" placeholder="DNI/RUC" required />
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="correo" id="id-correo" class="form-control" placeholder="Correo electrónico" autofocus required />
+                    </div>
+
+                    <div class="form-group">
+                        <input type="password" name="clave" id="id-clave-registro" class="form-control" placeholder="Clave" required />
+                    </div>
+
+                    <div class="form-row">
+                        <div class=" form-group col-sm-10">
+                            <button type="submit" class="btn btn-primary btn-block" id="btn-registrar">Registrar</button>
+                        </div>
+                        <div class=" form-group col-sm-2">
+                            <button type="reset" class="btn btn-outline-dark btn-block" id="btn-reset"><span class="oi oi-trash"></span></button>
+                        </div>
+                    </div>
+
+                    <div class="alert alert-success" role="alert" id="id-alerta-exito" style="display: none; text-align: center;"></div>
+                    <div class="alert alert-danger" role="alert" id="id-alerta-error" style="display: none; text-align: center;"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<script src="~/Scripts/jquery-3.0.0.min.js"></script>
+<script src="~/Scripts/js/login.js"></script>

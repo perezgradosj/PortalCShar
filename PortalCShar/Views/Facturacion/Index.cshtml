@@ -1,0 +1,75 @@
+﻿
+@{
+    ViewBag.Title = "Consultar mi comprobante";
+}
+
+<section>
+    <form class="form-signin" id="form-descarga-documentos">
+        <center><h3>Datos del comprobante electrónico</h3></center><hr />
+        <input type="hidden" id="hidden" value="holi" name="tipo"/>
+        <div class="form-group">
+           <label>Tipo de documento:</label>
+            <select class="form-control" name="tipodocumento" id="id-tipo-documento" autofocus required>
+                <option></option>
+                <option value="03">Boleta electronica</option>
+                <option value="01">Factura electronica</option>
+                <option value="07">Nota de credito electronica</option>
+                <option value="08">Nota de debito electronica</option>
+                <option value="20">Comprobante de retencion electronica</option>
+                <option value="40">Comprobante de percepcion electronica</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" name="serie" id="id-serie" maxlength="4" minlength="4" placeholder="Serie" required />
+        </div>
+
+        <div class="form-group">
+            <input type="text" class="form-control" name="ndocumento" id="id-ndocumento" pattern="^[0-9]{1,15}$" maxlength="15" placeholder="Número de documento" required />
+        </div>
+
+        <div class="form-group">
+            <label>Fecha de emisión:</label>
+            <input type="date" class="form-control" name="fechaemision" id="id-fecha" required />
+        </div>
+
+        <div class="form-group">
+            <input type="text" class="form-control" name="montototal" id="id-montoTotal" pattern="^[1-9]([0-9]{1,9})?([.][0-9]{1,2})?$" maxlength="13" placeholder="Monto total" required />
+        </div>
+
+        <center><h9>Escriba el texto del cuadro por favor:</h9></center><hr>
+
+        <div class="form-group row">
+            <div class="col-sm-4">
+                <input type="text" class="form-control input-captcha" id="id-input-captcha" pattern="^([a-zA-Z0-9]){5}$" maxlength="5" required>
+                <div id="id-alerta-captcha" style="display: none; color: red" align="center">
+                    El texto no coincide.
+                </div>
+            </div>
+            <div class="col-sm-8">
+                <div class="input-group mb-2 mr-sm-2">
+                    <div class="input-group-prepend">
+                        <div id="refresh" class="btn btn-primary input-group-text"><span class="oi oi-loop-circular"></span></div>
+                    </div>
+                    <input type="text" readonly class="form-control captcha" value="" id="id-captcha">
+                </div>
+            </div>
+        </div><hr />
+
+        <div id="div-seleccione-documento">
+            <center><h9>Seleccione documento que desee descargar:</h9></center><hr>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-sm-6" id="div-xml">
+                <button class="btn btn-outline-primary  btn-block" id="btn-xml" value=".xml">XML</button>
+            </div>
+            <div class="form-group col-sm-6" id="div-pdf">
+                <button class="btn btn-outline-primary btn-block" id="btn-pdf" value=".pdf">PDF</button>
+            </div>
+        </div> 
+    </form>
+</section>
+<script src="~/Scripts/jquery-3.0.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<script src="~/Scripts/js/principal.js"></script>
+

@@ -1,0 +1,2436 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ServicioFacturacion" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://www.slin.com.pe" />
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/Slin.Facturacion.BusinessEntities" />
+      <xs:element name="ListarDocumentoCabecera">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q1="http://www.slin.com.pe" minOccurs="0" name="oFacturaElectronica" nillable="true" type="q1:FacturaElectronica" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ListarDocumentoCabeceraResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Slin.Facturacion.BusinessEntities" minOccurs="0" name="ListarDocumentoCabeceraResult" nillable="true" type="q2:ListaFacturaElectronica" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ListarCabeceraFechas">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="RucReceptor" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="RucEmisor" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="FechaInicio" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="FechaFin" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ListarCabeceraFechasResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Slin.Facturacion.BusinessEntities" minOccurs="0" name="ListarCabeceraFechasResult" nillable="true" type="q3:ListaFacturaElectronica" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ListarDocumentoDetalle">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="tipoDocumento" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="NumeroSerie" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="NumeroDocumento" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="RucEmpresa" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ListarDocumentoDetalleResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Slin.Facturacion.BusinessEntities" minOccurs="0" name="ListarDocumentoDetalleResult" nillable="true" type="q4:ListaDetalleFacturaElectronica" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GenerarXML">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="tipoDocumento" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="NumeroSerie" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="NumeroDocumento" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="RucEmpresa" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GenerarXMLResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="GenerarXMLResult" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetListaMontoCab">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="tipoDocumento" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="NumeroSerie" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="NumeroDocumento" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="RucEmpresa" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetListaMontoCabResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Slin.Facturacion.BusinessEntities" minOccurs="0" name="GetListaMontoCabResult" nillable="true" type="q5:ListaFacturaElectronica" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetObtenerDocumentoUnico">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q6="http://www.slin.com.pe" minOccurs="0" name="oFacturaElectronica" nillable="true" type="q6:FacturaElectronica" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetObtenerDocumentoUnicoResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q7="http://www.slin.com.pe" minOccurs="0" name="GetObtenerDocumentoUnicoResult" nillable="true" type="q7:FacturaElectronica" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ListarDocumentoCabeceraCRECPE">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q8="http://www.slin.com.pe" minOccurs="0" name="oFacturaElectronica" nillable="true" type="q8:FacturaElectronica" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ListarDocumentoCabeceraCRECPEResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Slin.Facturacion.BusinessEntities" minOccurs="0" name="ListarDocumentoCabeceraCRECPEResult" nillable="true" type="q9:ListaFacturaElectronica" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ListarEstadoDocumento">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ListarEstadoDocumentoResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Slin.Facturacion.BusinessEntities" minOccurs="0" name="ListarEstadoDocumentoResult" nillable="true" type="q10:ListaEstado" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ListarTipoDocumento">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ListarTipoDocumentoResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Slin.Facturacion.BusinessEntities" minOccurs="0" name="ListarTipoDocumentoResult" nillable="true" type="q11:ListaTipoDocumento" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ListarSerie">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Slin.Facturacion.BusinessEntities" minOccurs="0" name="oSerie" nillable="true" type="q12:Serie" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ListarSerieResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Slin.Facturacion.BusinessEntities" minOccurs="0" name="ListarSerieResult" nillable="true" type="q13:ListaSerie" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetFechaDocumento">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="tpodocumento" type="xs:int" />
+            <xs:element minOccurs="0" name="serie" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="nrodocumento" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="rucempresa" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetFechaDocumentoResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q14="http://www.slin.com.pe" minOccurs="0" name="GetFechaDocumentoResult" nillable="true" type="q14:FacturaElectronica" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetValidarDocumentoExiste">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q15="http://www.slin.com.pe" minOccurs="0" name="oDocAnulado" nillable="true" type="q15:FacturaElectronica" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetValidarDocumentoExisteResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Slin.Facturacion.BusinessEntities" minOccurs="0" name="GetValidarDocumentoExisteResult" nillable="true" type="q16:ListaFacturaElectronica" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="InsertarDocumentoAnulado">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q17="http://www.slin.com.pe" minOccurs="0" name="oDocumentoAnulado" nillable="true" type="q17:FacturaElectronica" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="InsertarDocumentoAnuladoResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="InsertarDocumentoAnuladoResult" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ValidarExisteDocAnulado">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q18="http://www.slin.com.pe" minOccurs="0" name="oDocumentoAnulado" nillable="true" type="q18:FacturaElectronica" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ValidarExisteDocAnuladoResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Slin.Facturacion.BusinessEntities" minOccurs="0" name="ValidarExisteDocAnuladoResult" nillable="true" type="q19:ListaDocumento" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetListaDocumentoAnulado">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q20="http://www.slin.com.pe" minOccurs="0" name="oDocumentoAnulado" nillable="true" type="q20:FacturaElectronica" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetListaDocumentoAnuladoResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/Slin.Facturacion.BusinessEntities" minOccurs="0" name="GetListaDocumentoAnuladoResult" nillable="true" type="q21:ListaFacturaElectronica" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetListaDocumentoCabExcel">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q22="http://www.slin.com.pe" minOccurs="0" name="oFactura" nillable="true" type="q22:FacturaElectronica" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetListaDocumentoCabExcelResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/Slin.Facturacion.BusinessEntities" minOccurs="0" name="GetListaDocumentoCabExcelResult" nillable="true" type="q23:ListaDocumento" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetListaTipoFecha">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetListaTipoFechaResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/Slin.Facturacion.BusinessEntities" minOccurs="0" name="GetListaTipoFechaResult" nillable="true" type="q24:ListaEstado" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetListaCabeceraRC">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q25="http://www.slin.com.pe" minOccurs="0" name="documentoRC" nillable="true" type="q25:FacturaElectronica" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetListaCabeceraRCResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/Slin.Facturacion.BusinessEntities" minOccurs="0" name="GetListaCabeceraRCResult" nillable="true" type="q26:ListaFacturaElectronica" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetListaCabeceraRA">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q27="http://www.slin.com.pe" minOccurs="0" name="documentoRA" nillable="true" type="q27:FacturaElectronica" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetListaCabeceraRAResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/Slin.Facturacion.BusinessEntities" minOccurs="0" name="GetListaCabeceraRAResult" nillable="true" type="q28:ListaFacturaElectronica" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetListaCabeceraRR">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q29="http://www.slin.com.pe" minOccurs="0" name="documentoRR" nillable="true" type="q29:FacturaElectronica" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetListaCabeceraRRResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/Slin.Facturacion.BusinessEntities" minOccurs="0" name="GetListaCabeceraRRResult" nillable="true" type="q30:ListaFacturaElectronica" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetListaDetalleRC">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q31="http://www.slin.com.pe" minOccurs="0" name="documentoRC" nillable="true" type="q31:FacturaElectronica" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetListaDetalleRCResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/Slin.Facturacion.BusinessEntities" minOccurs="0" name="GetListaDetalleRCResult" nillable="true" type="q32:ListaDetalleFacturaElectronica" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetListaDetalleRA">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q33="http://www.slin.com.pe" minOccurs="0" name="documentoRA" nillable="true" type="q33:FacturaElectronica" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetListaDetalleRAResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/Slin.Facturacion.BusinessEntities" minOccurs="0" name="GetListaDetalleRAResult" nillable="true" type="q34:ListaDetalleFacturaElectronica" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetListaDetalleRR">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q35="http://www.slin.com.pe" minOccurs="0" name="documentoRR" nillable="true" type="q35:FacturaElectronica" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetListaDetalleRRResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/Slin.Facturacion.BusinessEntities" minOccurs="0" name="GetListaDetalleRRResult" nillable="true" type="q36:ListaDetalleFacturaElectronica" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetListaEstadoSistema_Ok">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="RucEntity" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetListaEstadoSistema_OkResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/Slin.Facturacion.BusinessEntities" minOccurs="0" name="GetListaEstadoSistema_OkResult" nillable="true" type="q37:ListaSistemaEstado" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetListaEstadoSistema_Error">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="RucEntity" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetListaEstadoSistema_ErrorResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/Slin.Facturacion.BusinessEntities" minOccurs="0" name="GetListaEstadoSistema_ErrorResult" nillable="true" type="q38:ListaSistemaEstado" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetListaHistorialCliente">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q39="http://www.slin.com.pe" minOccurs="0" name="oFacturaElectronica" nillable="true" type="q39:FacturaElectronica" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetListaHistorialClienteResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/Slin.Facturacion.BusinessEntities" minOccurs="0" name="GetListaHistorialClienteResult" nillable="true" type="q40:ListaFacturaElectronica" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetDocumentoPortalWeb">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q41="http://www.slin.com.pe" minOccurs="0" name="oFacturaElectronica" nillable="true" type="q41:FacturaElectronica" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetDocumentoPortalWebResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q42="http://www.slin.com.pe" minOccurs="0" name="GetDocumentoPortalWebResult" nillable="true" type="q42:FacturaElectronica" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetXMLPortal">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="num_cpe" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="fechaemision" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="montototal" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetXMLPortalResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="GetXMLPortalResult" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ListaDocumentosPortal">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="rucreceptor" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="compañia" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="fechainicio" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="fechafin" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="tipodocumento" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ListaDocumentosPortalResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/Slin.Facturacion.BusinessEntities" minOccurs="0" name="ListaDocumentosPortalResult" nillable="true" type="q43:ArrayOfDocumentosPortal" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetListaDocumentReceived">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q44="http://www.slin.com.pe" minOccurs="0" name="oFacturaElectronica" nillable="true" type="q44:FacturaElectronica" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetListaDocumentReceivedResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/Slin.Facturacion.BusinessEntities" minOccurs="0" name="GetListaDocumentReceivedResult" nillable="true" type="q45:ListaFacturaElectronica" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="InsertarDocumentoEnviado">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/Slin.Facturacion.BusinessEntities" minOccurs="0" name="odocumento" nillable="true" type="q46:Documento" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="InsertarDocumentoEnviadoResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="InsertarDocumentoEnviadoResult" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetListaDocumentoEnviado">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/Slin.Facturacion.BusinessEntities" minOccurs="0" name="odocumento" nillable="true" type="q47:Documento" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetListaDocumentoEnviadoResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/Slin.Facturacion.BusinessEntities" minOccurs="0" name="GetListaDocumentoEnviadoResult" nillable="true" type="q48:ListaDocumento" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="InsertTipoDocumentSend">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/Slin.Facturacion.BusinessEntities" minOccurs="0" name="ListSend" nillable="true" type="q49:ListaEstadoEnvio" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="InsertTipoDocumentSendResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="InsertTipoDocumentSendResult" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="InsertTipoDocumentPrint">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/Slin.Facturacion.BusinessEntities" minOccurs="0" name="ListPrint" nillable="true" type="q50:ListaEstadoPrint" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="InsertTipoDocumentPrintResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="InsertTipoDocumentPrintResult" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DeleteTipoDocumentSend">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/Slin.Facturacion.BusinessEntities" minOccurs="0" name="ListSend" nillable="true" type="q51:ListaEstadoEnvio" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DeleteTipoDocumentSendResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="DeleteTipoDocumentSendResult" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DeleteTipoDocumentPrint">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/Slin.Facturacion.BusinessEntities" minOccurs="0" name="ListPrint" nillable="true" type="q52:ListaEstadoPrint" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DeleteTipoDocumentPrintResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="DeleteTipoDocumentPrintResult" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetListEstadoEnvio">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="IdEstadoEnvio" type="xs:int" />
+            <xs:element minOccurs="0" name="RucEmpresa" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetListEstadoEnvioResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/Slin.Facturacion.BusinessEntities" minOccurs="0" name="GetListEstadoEnvioResult" nillable="true" type="q53:ListaEstadoEnvio" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetListEstadoPrint">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="IdEstadoPrint" type="xs:int" />
+            <xs:element minOccurs="0" name="RucEmpresa" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetListEstadoPrintResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/Slin.Facturacion.BusinessEntities" minOccurs="0" name="GetListEstadoPrintResult" nillable="true" type="q54:ListaEstadoPrint" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Get_ExchangeRate_Today">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="fecha" type="xs:dateTime" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Get_ExchangeRate_TodayResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/Slin.Facturacion.BusinessEntities" minOccurs="0" name="Get_ExchangeRate_TodayResult" nillable="true" type="q55:ListExchangeRate" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetList_PendingsDocuments_RA">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="ruccomp" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="type" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetList_PendingsDocuments_RAResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/Slin.Facturacion.BusinessEntities" minOccurs="0" name="GetList_PendingsDocuments_RAResult" nillable="true" type="q56:ListaFacturaElectronica" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetList_PendingsDocuments_RC">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="ruccomp" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetList_PendingsDocuments_RCResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/Slin.Facturacion.BusinessEntities" minOccurs="0" name="GetList_PendingsDocuments_RCResult" nillable="true" type="q57:ListaFacturaElectronica" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetList_PendingsDocuments_ErrorSend">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="ruccomp" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetList_PendingsDocuments_ErrorSendResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/Slin.Facturacion.BusinessEntities" minOccurs="0" name="GetList_PendingsDocuments_ErrorSendResult" nillable="true" type="q58:ListaFacturaElectronica" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Get_Document_Consult">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q59="http://www.slin.com.pe" minOccurs="0" name="obj" nillable="true" type="q59:FacturaElectronica" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Get_Document_ConsultResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q60="http://schemas.datacontract.org/2004/07/Slin.Facturacion.BusinessEntities" minOccurs="0" name="Get_Document_ConsultResult" nillable="true" type="q60:ListaFacturaElectronica" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ActualizaEstado_Doc">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="cod" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="num_ce" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ActualizaEstado_DocResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="ActualizaEstado_DocResult" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ActualizaEstado_Doc_R">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="cod" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="num_ce" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="cdr" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="cod_r" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="msg" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ActualizaEstado_Doc_RResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="ActualizaEstado_Doc_RResult" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Inserta_ArchivoExterno">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q61="http://schemas.datacontract.org/2004/07/Slin.Facturacion.BusinessEntities" minOccurs="0" name="file" nillable="true" type="q61:ArchivoExterno" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Inserta_ArchivoExternoResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="Inserta_ArchivoExternoResult" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Actualiza_ArchivoExterno">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="id" type="xs:int" />
+            <xs:element minOccurs="0" name="proc" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Actualiza_ArchivoExternoResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="Actualiza_ArchivoExternoResult" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetListArchivoExterno">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="FechaIni" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="FechaFin" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetListArchivoExternoResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q62="http://schemas.datacontract.org/2004/07/Slin.Facturacion.BusinessEntities" minOccurs="0" name="GetListArchivoExternoResult" nillable="true" type="q62:ListArchivoExterno" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="anyType" nillable="true" type="xs:anyType" />
+      <xs:element name="anyURI" nillable="true" type="xs:anyURI" />
+      <xs:element name="base64Binary" nillable="true" type="xs:base64Binary" />
+      <xs:element name="boolean" nillable="true" type="xs:boolean" />
+      <xs:element name="byte" nillable="true" type="xs:byte" />
+      <xs:element name="dateTime" nillable="true" type="xs:dateTime" />
+      <xs:element name="decimal" nillable="true" type="xs:decimal" />
+      <xs:element name="double" nillable="true" type="xs:double" />
+      <xs:element name="float" nillable="true" type="xs:float" />
+      <xs:element name="int" nillable="true" type="xs:int" />
+      <xs:element name="long" nillable="true" type="xs:long" />
+      <xs:element name="QName" nillable="true" type="xs:QName" />
+      <xs:element name="short" nillable="true" type="xs:short" />
+      <xs:element name="string" nillable="true" type="xs:string" />
+      <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte" />
+      <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt" />
+      <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong" />
+      <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort" />
+      <xs:element name="char" nillable="true" type="tns:char" />
+      <xs:simpleType name="char">
+        <xs:restriction base="xs:int" />
+      </xs:simpleType>
+      <xs:element name="duration" nillable="true" type="tns:duration" />
+      <xs:simpleType name="duration">
+        <xs:restriction base="xs:duration">
+          <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?" />
+          <xs:minInclusive value="-P10675199DT2H48M5.4775808S" />
+          <xs:maxInclusive value="P10675199DT2H48M5.4775807S" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="guid" nillable="true" type="tns:guid" />
+      <xs:simpleType name="guid">
+        <xs:restriction base="xs:string">
+          <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:attribute name="FactoryType" type="xs:QName" />
+      <xs:attribute name="Id" type="xs:ID" />
+      <xs:attribute name="Ref" type="xs:IDREF" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://www.slin.com.pe" elementFormDefault="qualified" targetNamespace="http://www.slin.com.pe" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/Slin.Facturacion.BusinessEntities" />
+      <xs:complexType name="FacturaElectronica">
+        <xs:sequence>
+          <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Slin.Facturacion.BusinessEntities" minOccurs="0" name="Adicionales" nillable="true" type="q1:Adicionales" />
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Slin.Facturacion.BusinessEntities" minOccurs="0" name="Afectado" nillable="true" type="q2:Afectado" />
+          <xs:element minOccurs="0" name="BarCode" nillable="true" type="xs:base64Binary" />
+          <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Slin.Facturacion.BusinessEntities" minOccurs="0" name="BeneficioHospedaje" nillable="true" type="q3:BeneficioHospedaje" />
+          <xs:element minOccurs="0" name="CC" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CCO" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CDR" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Campo1" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Campo10" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Campo2" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Campo3" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Campo4" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Campo5" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Campo6" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Campo7" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Campo8" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Campo9" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Cantidad" type="xs:int" />
+          <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Slin.Facturacion.BusinessEntities" minOccurs="0" name="Cliente" nillable="true" type="q4:Cliente" />
+          <xs:element minOccurs="0" name="CodGuiaDocumento" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CodTpoNC" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CodTpoND" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CodeMessage" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CodeResponse" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CodigoPDF417" nillable="true" type="xs:base64Binary" />
+          <xs:element minOccurs="0" name="DescTpoNC" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DescTpoND" nillable="true" type="xs:string" />
+          <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Slin.Facturacion.BusinessEntities" minOccurs="0" name="DetalleFacturaElectronica" nillable="true" type="q5:DetalleFacturaElectronica" />
+          <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Slin.Facturacion.BusinessEntities" minOccurs="0" name="Detraccion" nillable="true" type="q6:Detraccion" />
+          <xs:element minOccurs="0" name="Discr_Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Discr_ReferenceID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Discr_ResponseCode" nillable="true" type="xs:string" />
+          <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Slin.Facturacion.BusinessEntities" minOccurs="0" name="DocCRECPE" nillable="true" type="q7:DocCRECPE" />
+          <xs:element minOccurs="0" name="DocMessage" nillable="true" type="xs:string" />
+          <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Slin.Facturacion.BusinessEntities" minOccurs="0" name="Email" nillable="true" type="q8:Email" />
+          <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Slin.Facturacion.BusinessEntities" minOccurs="0" name="Emisor" nillable="true" type="q9:Emisor" />
+          <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Slin.Facturacion.BusinessEntities" minOccurs="0" name="Empresa" nillable="true" type="q10:Empresa" />
+          <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Slin.Facturacion.BusinessEntities" minOccurs="0" name="Estado" nillable="true" type="q11:Estado" />
+          <xs:element minOccurs="0" name="EstadoDesc" nillable="true" type="xs:string" />
+          <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Slin.Facturacion.BusinessEntities" minOccurs="0" name="EstadoEnvio" nillable="true" type="q12:EstadoEnvio" />
+          <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Slin.Facturacion.BusinessEntities" minOccurs="0" name="Extra" nillable="true" type="q13:Extra" />
+          <xs:element minOccurs="0" name="Factura_Linea_Anticipo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FechaAnulado" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="FechaCambio" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FechaCambioDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="FechaCarga" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FechaEmision" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="FechaEmision2" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FechaEmisionDocRelac" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FechaEnvio" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FechaEnvio2" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="FechaFin" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FechaFin2" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="FechaInicio" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FechaInicio2" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="FechaPago" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FechaRetencion" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FirmaDigital" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="GuiaDocumento" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IGV" type="xs:decimal" />
+          <xs:element minOccurs="0" name="IdAmb" type="xs:int" />
+          <xs:element minOccurs="0" name="IdEstadoDoc" type="xs:int" />
+          <xs:element minOccurs="0" name="IdFactura" type="xs:int" />
+          <xs:element minOccurs="0" name="IdSede" type="xs:int" />
+          <xs:element minOccurs="0" name="ImpGlobSoles" type="xs:decimal" />
+          <xs:element minOccurs="0" name="ImpPagGlobSoles" type="xs:decimal" />
+          <xs:element minOccurs="0" name="ImportTotxPagoNeto" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ImportePagoSinReten" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ImporteReteneido" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ImporteTotDocRelac" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ImporteTotalPagado" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ImporteTotalRetenido" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Impresora" nillable="true" type="xs:string" />
+          <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Slin.Facturacion.BusinessEntities" minOccurs="0" name="Leyenda" nillable="true" type="q14:Leyenda" />
+          <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Slin.Facturacion.BusinessEntities" minOccurs="0" name="ListaAfectado" nillable="true" type="q15:ListaAfectado" />
+          <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Slin.Facturacion.BusinessEntities" minOccurs="0" name="ListaDetalleFacturaElectronica" nillable="true" type="q16:ListaDetalleFacturaElectronica" />
+          <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Slin.Facturacion.BusinessEntities" minOccurs="0" name="ListaDocCRECPE" nillable="true" type="q17:ListaDocCRECPE" />
+          <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Slin.Facturacion.BusinessEntities" minOccurs="0" name="ListaExtra" nillable="true" type="q18:ListaExtra" />
+          <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Slin.Facturacion.BusinessEntities" minOccurs="0" name="ListaReferencia" nillable="true" type="q19:ListaReferencia" />
+          <xs:element minOccurs="0" name="LogoEmpresa" nillable="true" type="xs:base64Binary" />
+          <xs:element minOccurs="0" name="MarcaPDF" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MensajeAnulado" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MensajeEnvio" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MensajeEnvioDetalle" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MonObjetivoTasaCambio" nillable="true" type="xs:string" />
+          <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/Slin.Facturacion.BusinessEntities" minOccurs="0" name="Moneda" nillable="true" type="q20:Moneda" />
+          <xs:element minOccurs="0" name="MonedaImpRetenido" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MonedaImpTotDocRelac" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MonedaImpTotalPagado" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MonedaImpTotalRetenido" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MonedaPago" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MonedaRefTpoCambio" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MonedaTotxPagoNeto" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MontoDetraccion" type="xs:decimal" />
+          <xs:element minOccurs="0" name="MontoIGV" type="xs:decimal" />
+          <xs:element minOccurs="0" name="MontoIGVText" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MontoISC" type="xs:decimal" />
+          <xs:element minOccurs="0" name="MontoISCText" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MontoIgvCad" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MontoOtros" type="xs:decimal" />
+          <xs:element minOccurs="0" name="MontoOtrosText" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MontoTotal" type="xs:decimal" />
+          <xs:element minOccurs="0" name="MontoTotalCad" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MontoTotalLetras" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MontoTotalRes" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Monto_Linea_Anticipo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MotivoAnulado" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NombreArchivoXML" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Nota" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NoteResponse" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Nro" type="xs:int" />
+          <xs:element minOccurs="0" name="NroDocRelac" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NroOrdCompra" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NumeroAtencion" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NumeroDocumento" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NumeroDocumentoFin" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NumeroDocumentoInicio" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NumeroPago" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NumeroSerie" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PWD" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Para" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PorcentDetraccion" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="REF_FILES" nillable="true" type="xs:string" />
+          <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/Slin.Facturacion.BusinessEntities" minOccurs="0" name="Referencia" nillable="true" type="q21:Referencia" />
+          <xs:element minOccurs="0" name="RegimenRetencion" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RutaImagen" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Secuencia" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Sede" nillable="true" type="xs:string" />
+          <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/Slin.Facturacion.BusinessEntities" minOccurs="0" name="Serie" nillable="true" type="q22:Serie" />
+          <xs:element minOccurs="0" name="SerieCorrelativo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SubTotalVenta" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SubTotalVenta_mon" type="xs:decimal" />
+          <xs:element minOccurs="0" name="SumaIGV" type="xs:decimal" />
+          <xs:element minOccurs="0" name="TasaRetencion" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TipoCambio" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TipoDocRelac" nillable="true" type="xs:string" />
+          <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/Slin.Facturacion.BusinessEntities" minOccurs="0" name="TipoDocumento" nillable="true" type="q23:TipoDocumento" />
+          <xs:element minOccurs="0" name="TipoFecha" type="xs:int" />
+          <xs:element minOccurs="0" name="TipoMoneda" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TipoMonto" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TotOtrosCargos" type="xs:decimal" />
+          <xs:element minOccurs="0" name="TotalBonificaciones" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TotalBonificaciones_mon" type="xs:decimal" />
+          <xs:element minOccurs="0" name="TotalDescuento" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TotalDescuento_mon" type="xs:decimal" />
+          <xs:element minOccurs="0" name="TotalDetracciones" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TotalDetracciones_mon" type="xs:decimal" />
+          <xs:element minOccurs="0" name="TotalExonerado" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TotalExonerado_mon" type="xs:decimal" />
+          <xs:element minOccurs="0" name="TotalGratuito" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TotalGratuito_mon" type="xs:decimal" />
+          <xs:element minOccurs="0" name="TotalGravado" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TotalGravadoSinIGV" type="xs:decimal" />
+          <xs:element minOccurs="0" name="TotalInafecto" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TotalInafecto_mon" type="xs:decimal" />
+          <xs:element minOccurs="0" name="TotalPercepciones" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TotalPercepciones_mon" type="xs:decimal" />
+          <xs:element minOccurs="0" name="TotalRetenciones" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TotalRetenciones_mon" type="xs:decimal" />
+          <xs:element minOccurs="0" name="TotalTipoMonto" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Total_Anticipo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TotalnoGravado" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TpoOperacion" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TypeFormat" type="xs:int" />
+          <xs:element minOccurs="0" name="US" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Url" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Usuario" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ValorFirma" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ValorResumen" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="XML" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="FacturaElectronica" nillable="true" type="tns:FacturaElectronica" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Slin.Facturacion.BusinessEntities" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Slin.Facturacion.BusinessEntities" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://www.slin.com.pe" />
+      <xs:complexType name="Adicionales">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:element name="Adicionales" nillable="true" type="tns:Adicionales" />
+      <xs:complexType name="Afectado">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CodigoTipoDocumento" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ID" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Afectado" nillable="true" type="tns:Afectado" />
+      <xs:complexType name="BeneficioHospedaje">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CodigoBeneficio" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DescripcionBeneficio" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="BeneficioHospedaje" nillable="true" type="tns:BeneficioHospedaje" />
+      <xs:complexType name="Cliente">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Apellidos" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ClienteRuc" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CodPais" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CodUbigeo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CodigoCliente" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Departamento" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Direccion" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Distrito" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EmailClient" nillable="true" type="tns:Email" />
+          <xs:element minOccurs="0" name="Empresa" nillable="true" type="tns:Empresa" />
+          <xs:element minOccurs="0" name="Estado" nillable="true" type="tns:Estado" />
+          <xs:element minOccurs="0" name="IdCliente" type="xs:int" />
+          <xs:element minOccurs="0" name="Nombres" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NroDocumento" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NumeroDocumentoIdentidad" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Provincia" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RazonSocial" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Telefono" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TipoDocumentoIdentidad" nillable="true" type="tns:TipoDocumentoIdentidad" />
+          <xs:element minOccurs="0" name="Urbanizacion" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Cliente" nillable="true" type="tns:Cliente" />
+      <xs:complexType name="Email">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CC" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CCO" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Para" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TypeMail" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Email" nillable="true" type="tns:Email" />
+      <xs:complexType name="Empresa">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CodEmpresa" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CodPais" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CodigoUbigeo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Departamento" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Direccion" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Distrito" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DomicilioFiscal" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Dominio" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Estado" nillable="true" type="tns:Estado" />
+          <xs:element minOccurs="0" name="Fax" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FechaRegistro" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Group" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IP" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IdEmpresa" type="xs:int" />
+          <xs:element minOccurs="0" name="IdGrp" type="xs:int" />
+          <xs:element minOccurs="0" name="Nro" type="xs:int" />
+          <xs:element minOccurs="0" name="PaginaWeb" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Port" type="xs:int" />
+          <xs:element minOccurs="0" name="Provincia" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RUC" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RazonComercial" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RazonSocial" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Telefono" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TipoDocumentiIdentidad" nillable="true" type="tns:TipoDocumentoIdentidad" />
+          <xs:element minOccurs="0" name="TipoLogin" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Ubigeo" nillable="true" type="tns:Ubigeo" />
+          <xs:element minOccurs="0" name="Urbanizacion" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Url_CompanyConsult" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Url_CompanyLogo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UseSSL" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Empresa" nillable="true" type="tns:Empresa" />
+      <xs:complexType name="Estado">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Cod" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IdEstado" type="xs:int" />
+          <xs:element minOccurs="0" name="IdEstadoSUNAT" type="xs:int" />
+          <xs:element minOccurs="0" name="RutaImagen" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Estado" nillable="true" type="tns:Estado" />
+      <xs:complexType name="TipoDocumentoIdentidad">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Codigo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IdTipoDocumentoIdentidad" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="TipoDocumentoIdentidad" nillable="true" type="tns:TipoDocumentoIdentidad" />
+      <xs:complexType name="Ubigeo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CodigoUbigeo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Distrito" nillable="true" type="tns:Distrito" />
+          <xs:element minOccurs="0" name="IdUbigeo" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Ubigeo" nillable="true" type="tns:Ubigeo" />
+      <xs:complexType name="Distrito">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Codigo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CodigoUbigeo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IdDistrito" type="xs:int" />
+          <xs:element minOccurs="0" name="Provincia" nillable="true" type="tns:Provincia" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Distrito" nillable="true" type="tns:Distrito" />
+      <xs:complexType name="Provincia">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Codigo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Departamento" nillable="true" type="tns:Departamento" />
+          <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Distrito" nillable="true" type="tns:Distrito" />
+          <xs:element minOccurs="0" name="IdProvincia" type="xs:int" />
+          <xs:element minOccurs="0" name="ListaDistrito" nillable="true" type="tns:ListaDistrito" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Provincia" nillable="true" type="tns:Provincia" />
+      <xs:complexType name="Departamento">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Codigo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IdDepartamento" type="xs:int" />
+          <xs:element minOccurs="0" name="ListaProvincia" nillable="true" type="tns:ListaProvincia" />
+          <xs:element minOccurs="0" name="Pais" nillable="true" type="tns:Pais" />
+          <xs:element minOccurs="0" name="Provincia" nillable="true" type="tns:Provincia" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Departamento" nillable="true" type="tns:Departamento" />
+      <xs:complexType name="ListaProvincia">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Provincia" nillable="true" type="tns:Provincia" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ListaProvincia" nillable="true" type="tns:ListaProvincia" />
+      <xs:complexType name="Pais">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Codigo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IdPais" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Pais" nillable="true" type="tns:Pais" />
+      <xs:complexType name="ListaDistrito">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Distrito" nillable="true" type="tns:Distrito" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ListaDistrito" nillable="true" type="tns:ListaDistrito" />
+      <xs:complexType name="DetalleFacturaElectronica">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Anuladas" type="xs:int" />
+          <xs:element minOccurs="0" name="Cantidad" type="xs:decimal" />
+          <xs:element minOccurs="0" name="CodAndDesc" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CodigoAfecto" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CodigoAfectoIGV" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CodigoProducto" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CodigoSisISC" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DescAndCod" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DescripcionMonto" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DetMontoIGV" type="xs:decimal" />
+          <xs:element minOccurs="0" name="DetMontoIGVText" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DetMontoISC" type="xs:decimal" />
+          <xs:element minOccurs="0" name="DetMontoISCText" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DetMontoOtros" type="xs:decimal" />
+          <xs:element minOccurs="0" name="DetMontoOtrosText" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Dscto" type="xs:decimal" />
+          <xs:element minOccurs="0" name="DsctoText" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Emitidas" type="xs:int" />
+          <xs:element xmlns:q1="http://www.slin.com.pe" minOccurs="0" name="FacturaElectronica" nillable="true" type="q1:FacturaElectronica" />
+          <xs:element minOccurs="0" name="IGV" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Importe" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Linea" type="xs:int" />
+          <xs:element minOccurs="0" name="MontoExonerado" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MontoGravado" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MontoIGV" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MontoISC" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MontoInafecto" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MontoPrecioVenta" type="xs:decimal" />
+          <xs:element minOccurs="0" name="MontoTotal" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NombreArchivoXML" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Nro" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NroFin" type="xs:int" />
+          <xs:element minOccurs="0" name="NroInicio" type="xs:int" />
+          <xs:element minOccurs="0" name="NroOrden" type="xs:int" />
+          <xs:element minOccurs="0" name="NumOrden" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NumeroDocumento" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NumeroSerie" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PrecioVenta" type="xs:decimal" />
+          <xs:element minOccurs="0" name="PrecioVentaTexto" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Producto" nillable="true" type="tns:Producto" />
+          <xs:element minOccurs="0" name="Serie" nillable="true" type="tns:Serie" />
+          <xs:element minOccurs="0" name="Simbolo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SimboloSol" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SubTotal" type="xs:decimal" />
+          <xs:element minOccurs="0" name="SubTotalTexto" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TipoDocumento" nillable="true" type="tns:TipoDocumento" />
+          <xs:element minOccurs="0" name="TotDscto" type="xs:decimal" />
+          <xs:element minOccurs="0" name="TotDsctoText" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TotalDocEmitido" type="xs:int" />
+          <xs:element minOccurs="0" name="TotalOtrosCargos" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TotalOtrosTributos" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Unidad" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ValorImpW" type="xs:decimal" />
+          <xs:element minOccurs="0" name="ValorImpWText" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ValorUnitario" type="xs:decimal" />
+          <xs:element minOccurs="0" name="ValorVenta" type="xs:decimal" />
+          <xs:element minOccurs="0" name="ValorVentaSinIGV" type="xs:decimal" />
+          <xs:element minOccurs="0" name="ValorVentaTexto" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="DetalleFacturaElectronica" nillable="true" type="tns:DetalleFacturaElectronica" />
+      <xs:complexType name="Producto">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Cantidad" type="xs:decimal" />
+          <xs:element minOccurs="0" name="CodigoProducto" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IdProducto" type="xs:int" />
+          <xs:element minOccurs="0" name="Precio" nillable="true" type="tns:Precio" />
+          <xs:element minOccurs="0" name="PrecioVenta" type="xs:decimal" />
+          <xs:element minOccurs="0" name="UnidadMedida" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ValorVenta" type="xs:decimal" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Producto" nillable="true" type="tns:Producto" />
+      <xs:complexType name="Precio">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CodigoProducto" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IdPrecio" type="xs:int" />
+          <xs:element minOccurs="0" name="IdProducto" type="xs:int" />
+          <xs:element minOccurs="0" name="Moneda" nillable="true" type="tns:Moneda" />
+          <xs:element minOccurs="0" name="Valor" type="xs:decimal" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Precio" nillable="true" type="tns:Precio" />
+      <xs:complexType name="Moneda">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IdMoneda" type="xs:int" />
+          <xs:element minOccurs="0" name="Simbolo" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Moneda" nillable="true" type="tns:Moneda" />
+      <xs:complexType name="Serie">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CodigoSerie" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DescripcionSerie" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Empresa" nillable="true" type="tns:Empresa" />
+          <xs:element minOccurs="0" name="IdSerie" type="xs:int" />
+          <xs:element minOccurs="0" name="NumeroSerie" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TipoDocumento" nillable="true" type="tns:TipoDocumento" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Serie" nillable="true" type="tns:Serie" />
+      <xs:complexType name="TipoDocumento">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CodigoDocumento" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Empresa" nillable="true" type="tns:Empresa" />
+          <xs:element minOccurs="0" name="Estado" nillable="true" type="tns:Estado" />
+          <xs:element minOccurs="0" name="IdTipoDocumento" type="xs:int" />
+          <xs:element minOccurs="0" name="Nivel" type="xs:int" />
+          <xs:element minOccurs="0" name="Padre" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="TipoDocumento" nillable="true" type="tns:TipoDocumento" />
+      <xs:complexType name="Detraccion">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Codigo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CodigoDetraccion" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CtaDetraccion" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DescripcionDetraccion" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Detraccion" nillable="true" type="tns:Detraccion" />
+      <xs:complexType name="DocCRECPE">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="FechaCambio" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FechaEmiDocRelac" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="FechaEmisionDocRelac" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FechaPago" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FechaPagoDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="FechaRetencion" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FechaRetencionDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="FechaTipoCambio" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="ImportePagoSinReten" type="xs:decimal" />
+          <xs:element minOccurs="0" name="ImporteRetenido" type="xs:decimal" />
+          <xs:element minOccurs="0" name="ImporteTotDocRelac" type="xs:decimal" />
+          <xs:element minOccurs="0" name="ImporteTotalPagado" type="xs:decimal" />
+          <xs:element minOccurs="0" name="ImporteTotalRetenido" type="xs:decimal" />
+          <xs:element minOccurs="0" name="ImporteTotxPagoNeto" type="xs:decimal" />
+          <xs:element minOccurs="0" name="MonObjetivoTasaCambio" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MonedaImpRetenido" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MonedaImpTotDocRelac" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MonedaImpTotalPagado" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MonedaImpTotalRetenido" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MonedaPago" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MonedaRefTpoCambio" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MonedaTotxPagoNeto" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NombreArchivoXML" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NroDocRelac" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NroOrden" type="xs:int" />
+          <xs:element minOccurs="0" name="NumeroDocumento" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NumeroPago" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NumeroSerie" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RegimenRetencion" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Simbolo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SimboloSol" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TasaRetencion" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TipoCambio" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TipoDocRelac" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="DocCRECPE" nillable="true" type="tns:DocCRECPE" />
+      <xs:complexType name="Emisor">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Departamento" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Distrito" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DomicilioFiscal" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NombreComercio" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NombreEmisor" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NumeroDocumentoIdentidad" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Pais" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Provincia" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TipoDocumentoIdentidad" nillable="true" type="tns:TipoDocumentoIdentidad" />
+          <xs:element minOccurs="0" name="Ubigeo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Urbanizacion" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Emisor" nillable="true" type="tns:Emisor" />
+      <xs:complexType name="EstadoEnvio">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Codigo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Empresa" nillable="true" type="tns:Empresa" />
+          <xs:element minOccurs="0" name="IdEstadoEnvio" type="xs:int" />
+          <xs:element minOccurs="0" name="TipoDocumento" nillable="true" type="tns:TipoDocumento" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="EstadoEnvio" nillable="true" type="tns:EstadoEnvio" />
+      <xs:complexType name="Extra">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ExDato" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ExLinea" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ExTipo" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Extra" nillable="true" type="tns:Extra" />
+      <xs:complexType name="Leyenda">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CodigoLeyenda" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DescripcionLeyenda" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Leyenda" nillable="true" type="tns:Leyenda" />
+      <xs:complexType name="ListaAfectado">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Afectado" nillable="true" type="tns:Afectado" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ListaAfectado" nillable="true" type="tns:ListaAfectado" />
+      <xs:complexType name="ListaDetalleFacturaElectronica">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="DetalleFacturaElectronica" nillable="true" type="tns:DetalleFacturaElectronica" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ListaDetalleFacturaElectronica" nillable="true" type="tns:ListaDetalleFacturaElectronica" />
+      <xs:complexType name="ListaDocCRECPE">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="DocCRECPE" nillable="true" type="tns:DocCRECPE" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ListaDocCRECPE" nillable="true" type="tns:ListaDocCRECPE" />
+      <xs:complexType name="ListaExtra">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Extra" nillable="true" type="tns:Extra" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ListaExtra" nillable="true" type="tns:ListaExtra" />
+      <xs:complexType name="ListaReferencia">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Referencia" nillable="true" type="tns:Referencia" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ListaReferencia" nillable="true" type="tns:ListaReferencia" />
+      <xs:complexType name="Referencia">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CodigoTipoDocumento" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ReferenceID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ResponseCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Referencia" nillable="true" type="tns:Referencia" />
+      <xs:complexType name="ListaFacturaElectronica">
+        <xs:sequence>
+          <xs:element xmlns:q2="http://www.slin.com.pe" minOccurs="0" maxOccurs="unbounded" name="FacturaElectronica" nillable="true" type="q2:FacturaElectronica" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ListaFacturaElectronica" nillable="true" type="tns:ListaFacturaElectronica" />
+      <xs:complexType name="ListaEstado">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Estado" nillable="true" type="tns:Estado" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ListaEstado" nillable="true" type="tns:ListaEstado" />
+      <xs:complexType name="ListaTipoDocumento">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="TipoDocumento" nillable="true" type="tns:TipoDocumento" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ListaTipoDocumento" nillable="true" type="tns:ListaTipoDocumento" />
+      <xs:complexType name="ListaSerie">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Serie" nillable="true" type="tns:Serie" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ListaSerie" nillable="true" type="tns:ListaSerie" />
+      <xs:complexType name="ListaDocumento">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Documento" nillable="true" type="tns:Documento" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ListaDocumento" nillable="true" type="tns:ListaDocumento" />
+      <xs:complexType name="Documento">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Asunto" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Cliente" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CodigoTipoDocumento" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Destino" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Empresa" nillable="true" type="tns:Empresa" />
+          <xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FechaAnulado" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="FechaDesde" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FechaEmision" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="FechaEnviado" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="FechaEnvio" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FechaHasta" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Fecha_Cad" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Igv" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Mensaje" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Moneda" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MontoTotal" type="xs:decimal" />
+          <xs:element minOccurs="0" name="NombreArchivo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Nro" type="xs:int" />
+          <xs:element minOccurs="0" name="NumDocCliente" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NumeroDocumento" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NumeroFactura" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Referente" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Remitente" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Serie" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TipoDocumento" nillable="true" type="tns:TipoDocumento" />
+          <xs:element minOccurs="0" name="TipoDocumentoDesc" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Total" type="xs:decimal" />
+          <xs:element minOccurs="0" name="ValorVenta" type="xs:decimal" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Documento" nillable="true" type="tns:Documento" />
+      <xs:complexType name="ListaSistemaEstado">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="SistemaEstado" nillable="true" type="tns:SistemaEstado" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ListaSistemaEstado" nillable="true" type="tns:ListaSistemaEstado" />
+      <xs:complexType name="SistemaEstado">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Ayer" type="xs:int" />
+          <xs:element minOccurs="0" name="Codigo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Criterio" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Diferencia" type="xs:int" />
+          <xs:element minOccurs="0" name="Hoy" type="xs:int" />
+          <xs:element minOccurs="0" name="MesActual" type="xs:int" />
+          <xs:element minOccurs="0" name="MesPasado" type="xs:int" />
+          <xs:element minOccurs="0" name="SemanaActual" type="xs:int" />
+          <xs:element minOccurs="0" name="TotalMes" type="xs:int" />
+          <xs:element minOccurs="0" name="UltimaSemana" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="SistemaEstado" nillable="true" type="tns:SistemaEstado" />
+      <xs:complexType name="ArrayOfDocumentosPortal">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="DocumentosPortal" nillable="true" type="tns:DocumentosPortal" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfDocumentosPortal" nillable="true" type="tns:ArrayOfDocumentosPortal" />
+      <xs:complexType name="DocumentosPortal">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="des_tipodocumento" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="fechaemision" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="montototal" type="xs:decimal" />
+          <xs:element minOccurs="0" name="ndocumento" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="num_cpe" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="rucemisor" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="serie" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="seriecorrelativo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="tipodocumento" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="DocumentosPortal" nillable="true" type="tns:DocumentosPortal" />
+      <xs:complexType name="ListaEstadoEnvio">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="EstadoEnvio" nillable="true" type="tns:EstadoEnvio" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ListaEstadoEnvio" nillable="true" type="tns:ListaEstadoEnvio" />
+      <xs:complexType name="ListaEstadoPrint">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="EstadoPrint" nillable="true" type="tns:EstadoPrint" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ListaEstadoPrint" nillable="true" type="tns:ListaEstadoPrint" />
+      <xs:complexType name="EstadoPrint">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Codigo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Empresa" nillable="true" type="tns:Empresa" />
+          <xs:element minOccurs="0" name="IdEstadoPrint" type="xs:int" />
+          <xs:element minOccurs="0" name="TipoDocumento" nillable="true" type="tns:TipoDocumento" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="EstadoPrint" nillable="true" type="tns:EstadoPrint" />
+      <xs:complexType name="ListExchangeRate">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="ExchangeRate" nillable="true" type="tns:ExchangeRate" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ListExchangeRate" nillable="true" type="tns:ListExchangeRate" />
+      <xs:complexType name="ExchangeRate">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Fecha" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Moneda" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Ruc" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Value" type="xs:decimal" />
+          <xs:element minOccurs="0" name="fech" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="fech_str" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="value" type="xs:decimal" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ExchangeRate" nillable="true" type="tns:ExchangeRate" />
+      <xs:complexType name="ArchivoExterno">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CantDocs" type="xs:int" />
+          <xs:element minOccurs="0" name="DocProc" type="xs:int" />
+          <xs:element minOccurs="0" name="Estado" nillable="true" type="tns:Estado" />
+          <xs:element minOccurs="0" name="Extension" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Fecha" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="FechaCarga" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FechaP" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RucEmpresa" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TipoDoc" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArchivoExterno" nillable="true" type="tns:ArchivoExterno" />
+      <xs:complexType name="ListArchivoExterno">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="ArchivoExterno" nillable="true" type="tns:ArchivoExterno" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ListArchivoExterno" nillable="true" type="tns:ListArchivoExterno" />
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="IServicioFacturacion_ListarDocumentoCabecera_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarDocumentoCabecera" />
+  </wsdl:message>
+  <wsdl:message name="IServicioFacturacion_ListarDocumentoCabecera_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarDocumentoCabeceraResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioFacturacion_ListarCabeceraFechas_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarCabeceraFechas" />
+  </wsdl:message>
+  <wsdl:message name="IServicioFacturacion_ListarCabeceraFechas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarCabeceraFechasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioFacturacion_ListarDocumentoDetalle_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarDocumentoDetalle" />
+  </wsdl:message>
+  <wsdl:message name="IServicioFacturacion_ListarDocumentoDetalle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarDocumentoDetalleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioFacturacion_GenerarXML_InputMessage">
+    <wsdl:part name="parameters" element="tns:GenerarXML" />
+  </wsdl:message>
+  <wsdl:message name="IServicioFacturacion_GenerarXML_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GenerarXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioFacturacion_GetListaMontoCab_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaMontoCab" />
+  </wsdl:message>
+  <wsdl:message name="IServicioFacturacion_GetListaMontoCab_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaMontoCabResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioFacturacion_GetObtenerDocumentoUnico_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetObtenerDocumentoUnico" />
+  </wsdl:message>
+  <wsdl:message name="IServicioFacturacion_GetObtenerDocumentoUnico_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetObtenerDocumentoUnicoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioFacturacion_ListarDocumentoCabeceraCRECPE_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarDocumentoCabeceraCRECPE" />
+  </wsdl:message>
+  <wsdl:message name="IServicioFacturacion_ListarDocumentoCabeceraCRECPE_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarDocumentoCabeceraCRECPEResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioFacturacion_ListarEstadoDocumento_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarEstadoDocumento" />
+  </wsdl:message>
+  <wsdl:message name="IServicioFacturacion_ListarEstadoDocumento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarEstadoDocumentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioFacturacion_ListarTipoDocumento_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarTipoDocumento" />
+  </wsdl:message>
+  <wsdl:message name="IServicioFacturacion_ListarTipoDocumento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarTipoDocumentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioFacturacion_ListarSerie_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarSerie" />
+  </wsdl:message>
+  <wsdl:message name="IServicioFacturacion_ListarSerie_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarSerieResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioFacturacion_GetFechaDocumento_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFechaDocumento" />
+  </wsdl:message>
+  <wsdl:message name="IServicioFacturacion_GetFechaDocumento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFechaDocumentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioFacturacion_GetValidarDocumentoExiste_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetValidarDocumentoExiste" />
+  </wsdl:message>
+  <wsdl:message name="IServicioFacturacion_GetValidarDocumentoExiste_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetValidarDocumentoExisteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioFacturacion_InsertarDocumentoAnulado_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarDocumentoAnulado" />
+  </wsdl:message>
+  <wsdl:message name="IServicioFacturacion_InsertarDocumentoAnulado_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarDocumentoAnuladoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioFacturacion_ValidarExisteDocAnulado_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidarExisteDocAnulado" />
+  </wsdl:message>
+  <wsdl:message name="IServicioFacturacion_ValidarExisteDocAnulado_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidarExisteDocAnuladoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioFacturacion_GetListaDocumentoAnulado_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaDocumentoAnulado" />
+  </wsdl:message>
+  <wsdl:message name="IServicioFacturacion_GetListaDocumentoAnulado_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaDocumentoAnuladoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioFacturacion_GetListaDocumentoCabExcel_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaDocumentoCabExcel" />
+  </wsdl:message>
+  <wsdl:message name="IServicioFacturacion_GetListaDocumentoCabExcel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaDocumentoCabExcelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioFacturacion_GetListaTipoFecha_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaTipoFecha" />
+  </wsdl:message>
+  <wsdl:message name="IServicioFacturacion_GetListaTipoFecha_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaTipoFechaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioFacturacion_GetListaCabeceraRC_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaCabeceraRC" />
+  </wsdl:message>
+  <wsdl:message name="IServicioFacturacion_GetListaCabeceraRC_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaCabeceraRCResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioFacturacion_GetListaCabeceraRA_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaCabeceraRA" />
+  </wsdl:message>
+  <wsdl:message name="IServicioFacturacion_GetListaCabeceraRA_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaCabeceraRAResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioFacturacion_GetListaCabeceraRR_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaCabeceraRR" />
+  </wsdl:message>
+  <wsdl:message name="IServicioFacturacion_GetListaCabeceraRR_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaCabeceraRRResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioFacturacion_GetListaDetalleRC_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaDetalleRC" />
+  </wsdl:message>
+  <wsdl:message name="IServicioFacturacion_GetListaDetalleRC_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaDetalleRCResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioFacturacion_GetListaDetalleRA_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaDetalleRA" />
+  </wsdl:message>
+  <wsdl:message name="IServicioFacturacion_GetListaDetalleRA_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaDetalleRAResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioFacturacion_GetListaDetalleRR_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaDetalleRR" />
+  </wsdl:message>
+  <wsdl:message name="IServicioFacturacion_GetListaDetalleRR_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaDetalleRRResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioFacturacion_GetListaEstadoSistema_Ok_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaEstadoSistema_Ok" />
+  </wsdl:message>
+  <wsdl:message name="IServicioFacturacion_GetListaEstadoSistema_Ok_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaEstadoSistema_OkResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioFacturacion_GetListaEstadoSistema_Error_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaEstadoSistema_Error" />
+  </wsdl:message>
+  <wsdl:message name="IServicioFacturacion_GetListaEstadoSistema_Error_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaEstadoSistema_ErrorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioFacturacion_GetListaHistorialCliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaHistorialCliente" />
+  </wsdl:message>
+  <wsdl:message name="IServicioFacturacion_GetListaHistorialCliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaHistorialClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioFacturacion_GetDocumentoPortalWeb_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDocumentoPortalWeb" />
+  </wsdl:message>
+  <wsdl:message name="IServicioFacturacion_GetDocumentoPortalWeb_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDocumentoPortalWebResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioFacturacion_GetXMLPortal_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetXMLPortal" />
+  </wsdl:message>
+  <wsdl:message name="IServicioFacturacion_GetXMLPortal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetXMLPortalResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioFacturacion_ListaDocumentosPortal_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListaDocumentosPortal" />
+  </wsdl:message>
+  <wsdl:message name="IServicioFacturacion_ListaDocumentosPortal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListaDocumentosPortalResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioFacturacion_GetListaDocumentReceived_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaDocumentReceived" />
+  </wsdl:message>
+  <wsdl:message name="IServicioFacturacion_GetListaDocumentReceived_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaDocumentReceivedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioFacturacion_InsertarDocumentoEnviado_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarDocumentoEnviado" />
+  </wsdl:message>
+  <wsdl:message name="IServicioFacturacion_InsertarDocumentoEnviado_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarDocumentoEnviadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioFacturacion_GetListaDocumentoEnviado_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaDocumentoEnviado" />
+  </wsdl:message>
+  <wsdl:message name="IServicioFacturacion_GetListaDocumentoEnviado_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaDocumentoEnviadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioFacturacion_InsertTipoDocumentSend_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertTipoDocumentSend" />
+  </wsdl:message>
+  <wsdl:message name="IServicioFacturacion_InsertTipoDocumentSend_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertTipoDocumentSendResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioFacturacion_InsertTipoDocumentPrint_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertTipoDocumentPrint" />
+  </wsdl:message>
+  <wsdl:message name="IServicioFacturacion_InsertTipoDocumentPrint_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertTipoDocumentPrintResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioFacturacion_DeleteTipoDocumentSend_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteTipoDocumentSend" />
+  </wsdl:message>
+  <wsdl:message name="IServicioFacturacion_DeleteTipoDocumentSend_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteTipoDocumentSendResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioFacturacion_DeleteTipoDocumentPrint_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteTipoDocumentPrint" />
+  </wsdl:message>
+  <wsdl:message name="IServicioFacturacion_DeleteTipoDocumentPrint_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteTipoDocumentPrintResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioFacturacion_GetListEstadoEnvio_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListEstadoEnvio" />
+  </wsdl:message>
+  <wsdl:message name="IServicioFacturacion_GetListEstadoEnvio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListEstadoEnvioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioFacturacion_GetListEstadoPrint_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListEstadoPrint" />
+  </wsdl:message>
+  <wsdl:message name="IServicioFacturacion_GetListEstadoPrint_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListEstadoPrintResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioFacturacion_Get_ExchangeRate_Today_InputMessage">
+    <wsdl:part name="parameters" element="tns:Get_ExchangeRate_Today" />
+  </wsdl:message>
+  <wsdl:message name="IServicioFacturacion_Get_ExchangeRate_Today_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Get_ExchangeRate_TodayResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioFacturacion_GetList_PendingsDocuments_RA_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetList_PendingsDocuments_RA" />
+  </wsdl:message>
+  <wsdl:message name="IServicioFacturacion_GetList_PendingsDocuments_RA_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetList_PendingsDocuments_RAResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioFacturacion_GetList_PendingsDocuments_RC_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetList_PendingsDocuments_RC" />
+  </wsdl:message>
+  <wsdl:message name="IServicioFacturacion_GetList_PendingsDocuments_RC_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetList_PendingsDocuments_RCResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioFacturacion_GetList_PendingsDocuments_ErrorSend_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetList_PendingsDocuments_ErrorSend" />
+  </wsdl:message>
+  <wsdl:message name="IServicioFacturacion_GetList_PendingsDocuments_ErrorSend_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetList_PendingsDocuments_ErrorSendResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioFacturacion_Get_Document_Consult_InputMessage">
+    <wsdl:part name="parameters" element="tns:Get_Document_Consult" />
+  </wsdl:message>
+  <wsdl:message name="IServicioFacturacion_Get_Document_Consult_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Get_Document_ConsultResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioFacturacion_ActualizaEstado_Doc_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizaEstado_Doc" />
+  </wsdl:message>
+  <wsdl:message name="IServicioFacturacion_ActualizaEstado_Doc_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizaEstado_DocResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioFacturacion_ActualizaEstado_Doc_R_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizaEstado_Doc_R" />
+  </wsdl:message>
+  <wsdl:message name="IServicioFacturacion_ActualizaEstado_Doc_R_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizaEstado_Doc_RResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioFacturacion_Inserta_ArchivoExterno_InputMessage">
+    <wsdl:part name="parameters" element="tns:Inserta_ArchivoExterno" />
+  </wsdl:message>
+  <wsdl:message name="IServicioFacturacion_Inserta_ArchivoExterno_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Inserta_ArchivoExternoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioFacturacion_Actualiza_ArchivoExterno_InputMessage">
+    <wsdl:part name="parameters" element="tns:Actualiza_ArchivoExterno" />
+  </wsdl:message>
+  <wsdl:message name="IServicioFacturacion_Actualiza_ArchivoExterno_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Actualiza_ArchivoExternoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioFacturacion_GetListArchivoExterno_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListArchivoExterno" />
+  </wsdl:message>
+  <wsdl:message name="IServicioFacturacion_GetListArchivoExterno_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListArchivoExternoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IServicioFacturacion">
+    <wsdl:operation name="ListarDocumentoCabecera">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioFacturacion/ListarDocumentoCabecera" message="tns:IServicioFacturacion_ListarDocumentoCabecera_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioFacturacion/ListarDocumentoCabeceraResponse" message="tns:IServicioFacturacion_ListarDocumentoCabecera_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarCabeceraFechas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioFacturacion/ListarCabeceraFechas" message="tns:IServicioFacturacion_ListarCabeceraFechas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioFacturacion/ListarCabeceraFechasResponse" message="tns:IServicioFacturacion_ListarCabeceraFechas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarDocumentoDetalle">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioFacturacion/ListarDocumentoDetalle" message="tns:IServicioFacturacion_ListarDocumentoDetalle_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioFacturacion/ListarDocumentoDetalleResponse" message="tns:IServicioFacturacion_ListarDocumentoDetalle_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GenerarXML">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioFacturacion/GenerarXML" message="tns:IServicioFacturacion_GenerarXML_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioFacturacion/GenerarXMLResponse" message="tns:IServicioFacturacion_GenerarXML_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListaMontoCab">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioFacturacion/GetListaMontoCab" message="tns:IServicioFacturacion_GetListaMontoCab_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioFacturacion/GetListaMontoCabResponse" message="tns:IServicioFacturacion_GetListaMontoCab_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetObtenerDocumentoUnico">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioFacturacion/GetObtenerDocumentoUnico" message="tns:IServicioFacturacion_GetObtenerDocumentoUnico_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioFacturacion/GetObtenerDocumentoUnicoResponse" message="tns:IServicioFacturacion_GetObtenerDocumentoUnico_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarDocumentoCabeceraCRECPE">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioFacturacion/ListarDocumentoCabeceraCRECPE" message="tns:IServicioFacturacion_ListarDocumentoCabeceraCRECPE_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioFacturacion/ListarDocumentoCabeceraCRECPEResponse" message="tns:IServicioFacturacion_ListarDocumentoCabeceraCRECPE_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarEstadoDocumento">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioFacturacion/ListarEstadoDocumento" message="tns:IServicioFacturacion_ListarEstadoDocumento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioFacturacion/ListarEstadoDocumentoResponse" message="tns:IServicioFacturacion_ListarEstadoDocumento_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarTipoDocumento">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioFacturacion/ListarTipoDocumento" message="tns:IServicioFacturacion_ListarTipoDocumento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioFacturacion/ListarTipoDocumentoResponse" message="tns:IServicioFacturacion_ListarTipoDocumento_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarSerie">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioFacturacion/ListarSerie" message="tns:IServicioFacturacion_ListarSerie_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioFacturacion/ListarSerieResponse" message="tns:IServicioFacturacion_ListarSerie_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFechaDocumento">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioFacturacion/GetFechaDocumento" message="tns:IServicioFacturacion_GetFechaDocumento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioFacturacion/GetFechaDocumentoResponse" message="tns:IServicioFacturacion_GetFechaDocumento_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetValidarDocumentoExiste">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioFacturacion/GetValidarDocumentoExiste" message="tns:IServicioFacturacion_GetValidarDocumentoExiste_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioFacturacion/GetValidarDocumentoExisteResponse" message="tns:IServicioFacturacion_GetValidarDocumentoExiste_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertarDocumentoAnulado">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioFacturacion/InsertarDocumentoAnulado" message="tns:IServicioFacturacion_InsertarDocumentoAnulado_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioFacturacion/InsertarDocumentoAnuladoResponse" message="tns:IServicioFacturacion_InsertarDocumentoAnulado_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidarExisteDocAnulado">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioFacturacion/ValidarExisteDocAnulado" message="tns:IServicioFacturacion_ValidarExisteDocAnulado_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioFacturacion/ValidarExisteDocAnuladoResponse" message="tns:IServicioFacturacion_ValidarExisteDocAnulado_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListaDocumentoAnulado">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioFacturacion/GetListaDocumentoAnulado" message="tns:IServicioFacturacion_GetListaDocumentoAnulado_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioFacturacion/GetListaDocumentoAnuladoResponse" message="tns:IServicioFacturacion_GetListaDocumentoAnulado_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListaDocumentoCabExcel">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioFacturacion/GetListaDocumentoCabExcel" message="tns:IServicioFacturacion_GetListaDocumentoCabExcel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioFacturacion/GetListaDocumentoCabExcelResponse" message="tns:IServicioFacturacion_GetListaDocumentoCabExcel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListaTipoFecha">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioFacturacion/GetListaTipoFecha" message="tns:IServicioFacturacion_GetListaTipoFecha_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioFacturacion/GetListaTipoFechaResponse" message="tns:IServicioFacturacion_GetListaTipoFecha_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListaCabeceraRC">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioFacturacion/GetListaCabeceraRC" message="tns:IServicioFacturacion_GetListaCabeceraRC_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioFacturacion/GetListaCabeceraRCResponse" message="tns:IServicioFacturacion_GetListaCabeceraRC_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListaCabeceraRA">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioFacturacion/GetListaCabeceraRA" message="tns:IServicioFacturacion_GetListaCabeceraRA_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioFacturacion/GetListaCabeceraRAResponse" message="tns:IServicioFacturacion_GetListaCabeceraRA_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListaCabeceraRR">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioFacturacion/GetListaCabeceraRR" message="tns:IServicioFacturacion_GetListaCabeceraRR_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioFacturacion/GetListaCabeceraRRResponse" message="tns:IServicioFacturacion_GetListaCabeceraRR_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListaDetalleRC">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioFacturacion/GetListaDetalleRC" message="tns:IServicioFacturacion_GetListaDetalleRC_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioFacturacion/GetListaDetalleRCResponse" message="tns:IServicioFacturacion_GetListaDetalleRC_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListaDetalleRA">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioFacturacion/GetListaDetalleRA" message="tns:IServicioFacturacion_GetListaDetalleRA_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioFacturacion/GetListaDetalleRAResponse" message="tns:IServicioFacturacion_GetListaDetalleRA_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListaDetalleRR">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioFacturacion/GetListaDetalleRR" message="tns:IServicioFacturacion_GetListaDetalleRR_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioFacturacion/GetListaDetalleRRResponse" message="tns:IServicioFacturacion_GetListaDetalleRR_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListaEstadoSistema_Ok">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioFacturacion/GetListaEstadoSistema_Ok" message="tns:IServicioFacturacion_GetListaEstadoSistema_Ok_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioFacturacion/GetListaEstadoSistema_OkResponse" message="tns:IServicioFacturacion_GetListaEstadoSistema_Ok_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListaEstadoSistema_Error">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioFacturacion/GetListaEstadoSistema_Error" message="tns:IServicioFacturacion_GetListaEstadoSistema_Error_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioFacturacion/GetListaEstadoSistema_ErrorResponse" message="tns:IServicioFacturacion_GetListaEstadoSistema_Error_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListaHistorialCliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioFacturacion/GetListaHistorialCliente" message="tns:IServicioFacturacion_GetListaHistorialCliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioFacturacion/GetListaHistorialClienteResponse" message="tns:IServicioFacturacion_GetListaHistorialCliente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentoPortalWeb">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioFacturacion/GetDocumentoPortalWeb" message="tns:IServicioFacturacion_GetDocumentoPortalWeb_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioFacturacion/GetDocumentoPortalWebResponse" message="tns:IServicioFacturacion_GetDocumentoPortalWeb_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetXMLPortal">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioFacturacion/GetXMLPortal" message="tns:IServicioFacturacion_GetXMLPortal_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioFacturacion/GetXMLPortalResponse" message="tns:IServicioFacturacion_GetXMLPortal_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaDocumentosPortal">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioFacturacion/ListaDocumentosPortal" message="tns:IServicioFacturacion_ListaDocumentosPortal_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioFacturacion/ListaDocumentosPortalResponse" message="tns:IServicioFacturacion_ListaDocumentosPortal_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListaDocumentReceived">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioFacturacion/GetListaDocumentReceived" message="tns:IServicioFacturacion_GetListaDocumentReceived_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioFacturacion/GetListaDocumentReceivedResponse" message="tns:IServicioFacturacion_GetListaDocumentReceived_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertarDocumentoEnviado">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioFacturacion/InsertarDocumentoEnviado" message="tns:IServicioFacturacion_InsertarDocumentoEnviado_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioFacturacion/InsertarDocumentoEnviadoResponse" message="tns:IServicioFacturacion_InsertarDocumentoEnviado_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListaDocumentoEnviado">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioFacturacion/GetListaDocumentoEnviado" message="tns:IServicioFacturacion_GetListaDocumentoEnviado_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioFacturacion/GetListaDocumentoEnviadoResponse" message="tns:IServicioFacturacion_GetListaDocumentoEnviado_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertTipoDocumentSend">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioFacturacion/InsertTipoDocumentSend" message="tns:IServicioFacturacion_InsertTipoDocumentSend_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioFacturacion/InsertTipoDocumentSendResponse" message="tns:IServicioFacturacion_InsertTipoDocumentSend_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertTipoDocumentPrint">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioFacturacion/InsertTipoDocumentPrint" message="tns:IServicioFacturacion_InsertTipoDocumentPrint_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioFacturacion/InsertTipoDocumentPrintResponse" message="tns:IServicioFacturacion_InsertTipoDocumentPrint_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTipoDocumentSend">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioFacturacion/DeleteTipoDocumentSend" message="tns:IServicioFacturacion_DeleteTipoDocumentSend_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioFacturacion/DeleteTipoDocumentSendResponse" message="tns:IServicioFacturacion_DeleteTipoDocumentSend_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTipoDocumentPrint">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioFacturacion/DeleteTipoDocumentPrint" message="tns:IServicioFacturacion_DeleteTipoDocumentPrint_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioFacturacion/DeleteTipoDocumentPrintResponse" message="tns:IServicioFacturacion_DeleteTipoDocumentPrint_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListEstadoEnvio">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioFacturacion/GetListEstadoEnvio" message="tns:IServicioFacturacion_GetListEstadoEnvio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioFacturacion/GetListEstadoEnvioResponse" message="tns:IServicioFacturacion_GetListEstadoEnvio_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListEstadoPrint">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioFacturacion/GetListEstadoPrint" message="tns:IServicioFacturacion_GetListEstadoPrint_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioFacturacion/GetListEstadoPrintResponse" message="tns:IServicioFacturacion_GetListEstadoPrint_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_ExchangeRate_Today">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioFacturacion/Get_ExchangeRate_Today" message="tns:IServicioFacturacion_Get_ExchangeRate_Today_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioFacturacion/Get_ExchangeRate_TodayResponse" message="tns:IServicioFacturacion_Get_ExchangeRate_Today_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetList_PendingsDocuments_RA">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioFacturacion/GetList_PendingsDocuments_RA" message="tns:IServicioFacturacion_GetList_PendingsDocuments_RA_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioFacturacion/GetList_PendingsDocuments_RAResponse" message="tns:IServicioFacturacion_GetList_PendingsDocuments_RA_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetList_PendingsDocuments_RC">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioFacturacion/GetList_PendingsDocuments_RC" message="tns:IServicioFacturacion_GetList_PendingsDocuments_RC_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioFacturacion/GetList_PendingsDocuments_RCResponse" message="tns:IServicioFacturacion_GetList_PendingsDocuments_RC_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetList_PendingsDocuments_ErrorSend">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioFacturacion/GetList_PendingsDocuments_ErrorSend" message="tns:IServicioFacturacion_GetList_PendingsDocuments_ErrorSend_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioFacturacion/GetList_PendingsDocuments_ErrorSendResponse" message="tns:IServicioFacturacion_GetList_PendingsDocuments_ErrorSend_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_Document_Consult">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioFacturacion/Get_Document_Consult" message="tns:IServicioFacturacion_Get_Document_Consult_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioFacturacion/Get_Document_ConsultResponse" message="tns:IServicioFacturacion_Get_Document_Consult_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizaEstado_Doc">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioFacturacion/ActualizaEstado_Doc" message="tns:IServicioFacturacion_ActualizaEstado_Doc_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioFacturacion/ActualizaEstado_DocResponse" message="tns:IServicioFacturacion_ActualizaEstado_Doc_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizaEstado_Doc_R">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioFacturacion/ActualizaEstado_Doc_R" message="tns:IServicioFacturacion_ActualizaEstado_Doc_R_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioFacturacion/ActualizaEstado_Doc_RResponse" message="tns:IServicioFacturacion_ActualizaEstado_Doc_R_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Inserta_ArchivoExterno">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioFacturacion/Inserta_ArchivoExterno" message="tns:IServicioFacturacion_Inserta_ArchivoExterno_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioFacturacion/Inserta_ArchivoExternoResponse" message="tns:IServicioFacturacion_Inserta_ArchivoExterno_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Actualiza_ArchivoExterno">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioFacturacion/Actualiza_ArchivoExterno" message="tns:IServicioFacturacion_Actualiza_ArchivoExterno_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioFacturacion/Actualiza_ArchivoExternoResponse" message="tns:IServicioFacturacion_Actualiza_ArchivoExterno_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListArchivoExterno">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioFacturacion/GetListArchivoExterno" message="tns:IServicioFacturacion_GetListArchivoExterno_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioFacturacion/GetListArchivoExternoResponse" message="tns:IServicioFacturacion_GetListArchivoExterno_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IServicioFacturacion" type="tns:IServicioFacturacion">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ListarDocumentoCabecera">
+      <soap:operation soapAction="http://tempuri.org/IServicioFacturacion/ListarDocumentoCabecera" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarCabeceraFechas">
+      <soap:operation soapAction="http://tempuri.org/IServicioFacturacion/ListarCabeceraFechas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarDocumentoDetalle">
+      <soap:operation soapAction="http://tempuri.org/IServicioFacturacion/ListarDocumentoDetalle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerarXML">
+      <soap:operation soapAction="http://tempuri.org/IServicioFacturacion/GenerarXML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListaMontoCab">
+      <soap:operation soapAction="http://tempuri.org/IServicioFacturacion/GetListaMontoCab" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetObtenerDocumentoUnico">
+      <soap:operation soapAction="http://tempuri.org/IServicioFacturacion/GetObtenerDocumentoUnico" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarDocumentoCabeceraCRECPE">
+      <soap:operation soapAction="http://tempuri.org/IServicioFacturacion/ListarDocumentoCabeceraCRECPE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarEstadoDocumento">
+      <soap:operation soapAction="http://tempuri.org/IServicioFacturacion/ListarEstadoDocumento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarTipoDocumento">
+      <soap:operation soapAction="http://tempuri.org/IServicioFacturacion/ListarTipoDocumento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarSerie">
+      <soap:operation soapAction="http://tempuri.org/IServicioFacturacion/ListarSerie" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFechaDocumento">
+      <soap:operation soapAction="http://tempuri.org/IServicioFacturacion/GetFechaDocumento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetValidarDocumentoExiste">
+      <soap:operation soapAction="http://tempuri.org/IServicioFacturacion/GetValidarDocumentoExiste" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarDocumentoAnulado">
+      <soap:operation soapAction="http://tempuri.org/IServicioFacturacion/InsertarDocumentoAnulado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidarExisteDocAnulado">
+      <soap:operation soapAction="http://tempuri.org/IServicioFacturacion/ValidarExisteDocAnulado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListaDocumentoAnulado">
+      <soap:operation soapAction="http://tempuri.org/IServicioFacturacion/GetListaDocumentoAnulado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListaDocumentoCabExcel">
+      <soap:operation soapAction="http://tempuri.org/IServicioFacturacion/GetListaDocumentoCabExcel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListaTipoFecha">
+      <soap:operation soapAction="http://tempuri.org/IServicioFacturacion/GetListaTipoFecha" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListaCabeceraRC">
+      <soap:operation soapAction="http://tempuri.org/IServicioFacturacion/GetListaCabeceraRC" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListaCabeceraRA">
+      <soap:operation soapAction="http://tempuri.org/IServicioFacturacion/GetListaCabeceraRA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListaCabeceraRR">
+      <soap:operation soapAction="http://tempuri.org/IServicioFacturacion/GetListaCabeceraRR" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListaDetalleRC">
+      <soap:operation soapAction="http://tempuri.org/IServicioFacturacion/GetListaDetalleRC" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListaDetalleRA">
+      <soap:operation soapAction="http://tempuri.org/IServicioFacturacion/GetListaDetalleRA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListaDetalleRR">
+      <soap:operation soapAction="http://tempuri.org/IServicioFacturacion/GetListaDetalleRR" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListaEstadoSistema_Ok">
+      <soap:operation soapAction="http://tempuri.org/IServicioFacturacion/GetListaEstadoSistema_Ok" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListaEstadoSistema_Error">
+      <soap:operation soapAction="http://tempuri.org/IServicioFacturacion/GetListaEstadoSistema_Error" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListaHistorialCliente">
+      <soap:operation soapAction="http://tempuri.org/IServicioFacturacion/GetListaHistorialCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentoPortalWeb">
+      <soap:operation soapAction="http://tempuri.org/IServicioFacturacion/GetDocumentoPortalWeb" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetXMLPortal">
+      <soap:operation soapAction="http://tempuri.org/IServicioFacturacion/GetXMLPortal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaDocumentosPortal">
+      <soap:operation soapAction="http://tempuri.org/IServicioFacturacion/ListaDocumentosPortal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListaDocumentReceived">
+      <soap:operation soapAction="http://tempuri.org/IServicioFacturacion/GetListaDocumentReceived" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarDocumentoEnviado">
+      <soap:operation soapAction="http://tempuri.org/IServicioFacturacion/InsertarDocumentoEnviado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListaDocumentoEnviado">
+      <soap:operation soapAction="http://tempuri.org/IServicioFacturacion/GetListaDocumentoEnviado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertTipoDocumentSend">
+      <soap:operation soapAction="http://tempuri.org/IServicioFacturacion/InsertTipoDocumentSend" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertTipoDocumentPrint">
+      <soap:operation soapAction="http://tempuri.org/IServicioFacturacion/InsertTipoDocumentPrint" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTipoDocumentSend">
+      <soap:operation soapAction="http://tempuri.org/IServicioFacturacion/DeleteTipoDocumentSend" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTipoDocumentPrint">
+      <soap:operation soapAction="http://tempuri.org/IServicioFacturacion/DeleteTipoDocumentPrint" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListEstadoEnvio">
+      <soap:operation soapAction="http://tempuri.org/IServicioFacturacion/GetListEstadoEnvio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListEstadoPrint">
+      <soap:operation soapAction="http://tempuri.org/IServicioFacturacion/GetListEstadoPrint" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_ExchangeRate_Today">
+      <soap:operation soapAction="http://tempuri.org/IServicioFacturacion/Get_ExchangeRate_Today" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetList_PendingsDocuments_RA">
+      <soap:operation soapAction="http://tempuri.org/IServicioFacturacion/GetList_PendingsDocuments_RA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetList_PendingsDocuments_RC">
+      <soap:operation soapAction="http://tempuri.org/IServicioFacturacion/GetList_PendingsDocuments_RC" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetList_PendingsDocuments_ErrorSend">
+      <soap:operation soapAction="http://tempuri.org/IServicioFacturacion/GetList_PendingsDocuments_ErrorSend" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Document_Consult">
+      <soap:operation soapAction="http://tempuri.org/IServicioFacturacion/Get_Document_Consult" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizaEstado_Doc">
+      <soap:operation soapAction="http://tempuri.org/IServicioFacturacion/ActualizaEstado_Doc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizaEstado_Doc_R">
+      <soap:operation soapAction="http://tempuri.org/IServicioFacturacion/ActualizaEstado_Doc_R" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Inserta_ArchivoExterno">
+      <soap:operation soapAction="http://tempuri.org/IServicioFacturacion/Inserta_ArchivoExterno" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Actualiza_ArchivoExterno">
+      <soap:operation soapAction="http://tempuri.org/IServicioFacturacion/Actualiza_ArchivoExterno" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListArchivoExterno">
+      <soap:operation soapAction="http://tempuri.org/IServicioFacturacion/GetListArchivoExterno" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServicioFacturacion">
+    <wsdl:port name="BasicHttpBinding_IServicioFacturacion" binding="tns:BasicHttpBinding_IServicioFacturacion">
+      <soap:address location="http://localhost:8191/ServicioFacturacion.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
